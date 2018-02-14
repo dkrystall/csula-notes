@@ -1,0 +1,30 @@
+Question 1:
+5 gallon jug, 4 gallon jug.
+Put 2 gallons in 4 gallon jug.
+
+fill 5 gallon jug,
+pour 5 into 4,  (5 has 1 gallon)
+spill 4,
+pour 5 into 4 (4 has 1 gallon)
+fill 5
+pour 5 into 4 (5 has 2 gallons)
+spill 4
+Pour 5 into 4 (4 has 2 gallons)
+
+------------------------------------------------------
+
+Question 2:
+8 gal jug, 9 gal jug, fill 3 gals in 8 gal jug
+
+fill 9 gallon jug
+pour 9 into 8 (9 has 1 gallon after)
+spill 8,
+pour 9 into 8 (1 gallon in 8)
+fill 9
+pour 9 into 8 (9 has 2 gallons)
+spill 8
+pour 9 into 8 ( 8 has 2 gallons)
+fill 9
+pour 9 into 8 (9 has 3 gallons)
+spill 8
+pour 9 into 8 (8 has 3 gallons)x

@@ -1,0 +1,19 @@
+Linear Search(A, u)
+  for i = 1 to A.length
+    if (A[i] == u)
+      return i
+  return NIL
+
+Loop Invariant Proof:
+  Initialization: set i=0 A[1..0]
+  Maintenance:
+    1) Before execution of loop A[1..i-1] does not contain key
+    2) After the execution of the loop,
+      i) if A[i] == key, return i and terminate the algorithm
+      ii) if A[i] doesn't contain key, then A[1...i] does not contain key
+    3) A[1..i] does not contain the key
+  Termination:
+    1) if (A[i] == key), return i and terminate
+    2) i = A.length+1, A[1...i-1] => A[1...n] doesn't contain the key, return NIL and terminate.
+
+Chapter 2 problems

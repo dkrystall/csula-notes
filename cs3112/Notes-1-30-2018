@@ -1,0 +1,59 @@
+Θ(g(n)) Notation
+
+f(n) = Θ(g(n))
+----------------------------------------------------
+Θ(g(n))= {f(n) : ∃ positive constant, c1,c2, and n}
+      ∋ 0 <= c1*g(n) <= f(n) <= c2*g(n) ∀ n >= n₀ }
+
+      f(n) = 5n² + n + 1      c1*n  <= 5n² + n + 1  <= c2*n   , n >= n₀
+      g(n) = n²               c1*n² <= 5n² + n + 1  <= c2*n² , n₀ = 1, c1=1, c2=7
+
+      g(n) is upper and lower bound of f(n) after n₀ (when multiplied by c1 or c2)
+
+Θ(g(n)) is the most tightly bound asymptote....?
+
+lgᵤu = 1, a=vⁿ => logᵥA = n
+
+
+----------------------------------------------------
+O(g(n)) Notation: Big O of g(n) / Order of g(n), Used for upper bound
+f(n) = O(g(n))
+
+O(g(n))= {f(n) : ∃ positive constant, c and n
+          ∋ O <= f(n) <= c*g(n) ∀ n >= n₀ }
+
+  f(n) = 2n³ + n + 1
+  g(n) = n²√n, n²√n < n³, cannot be upper bound
+----------------------------------------------------
+Ω(g(n)) Notation, lower bound
+f(n) = Ω(g(n))
+
+Ω(g(n)) = {f(n) : ∃ positive constant, c and n₀
+          ∋ 0 <= c*g(n) <= f(n), ∀ n >= n₀ }
+----------------------------------------------------
+o(g(n)) little o Notation: little o of g(n), for absolute upper bound.
+
+o(g(n))= {f(n) : ∀ positive constant c ∃ n₀> 0
+          ∋ O <= f(n) < c*g(n) ∀ n >= n₀ }
+          0 <= 2n² + 5n + 1 <= c*n³ ✓
+    f(n) = 2n² + 5n + 1
+    g(n) = n³
+----------------------------------------------------
+⍵(g(n)) Notation, absolute lower bound
+f(n) = ⍵(g(n))
+⍵(g(n)) = {f(n) : ∀ positive constant c ∃ n₀> 0
+          ∋ O <= c*g(n) < f(n) ∀ n >= n₀ }
+
+        f(n) = 2n² + 5n + 1
+        g(n) = n
+
+lim n->∞, f(n) / g(n) = ∞ => f(n) = ⍵(g(n)), if lim goes to infinity, absolute upper bound
+lim n->∞, f(n) / g(n) = o => f(n) = o(g(n)), if lim goes to 0, absolute lower bound
+
+if f₁(n) = lg(n),
+   f₂(n) = nª, a > 0
+   f₃(n) = bⁿ, b > 1
+
+Any log function is a lower bound of a polynomial function, any polynomial func is upper bound of log func
+Any polynomial func is lower bound of exponential function
+any exponential func is upper bound of polynomial function

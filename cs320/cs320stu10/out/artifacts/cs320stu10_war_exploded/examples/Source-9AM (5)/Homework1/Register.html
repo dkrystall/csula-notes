@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Register</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+
+	<div class="jumbotron">
+	  <h1>Welcome to Jot!</h1>
+	  <p>Jot! is a cloud-based note taking app that allows you to create, store, edit, and share notes that you create directly in your browser!</p>
+	  <p>To begin, register below.</p>
+	</div>
+
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+		  <h3 class="panel-title">New User Registration</h3>
+		</div>
+		<div class="panel-body">
+		<form>
+			<div class="form-group">		
+			  <label for="name">Full Name</label>
+			  <input type="name" class="form-control" name="name" id="name" placeholder="First and Last Name">
+				<p class="text-warning">Error: You must specify your full name.</p>
+			</div>
+			 <div class="form-group">
+			   <label for="email">Email Address</label>
+			   <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+			 	<p class="text-warning">Error: You must provide a valid e-mail address.</p>
+			 </div>
+			 <div class="form-group">
+			   <label for="password1">Password</label>
+			   <input type="password" class="form-control" name="password1" id="password1" placeholder="Password">
+			 	<p class="text-warning">Error: Your password must contain at least one number and one special character.</p>
+			 </div>
+			 <div class="form-group">
+			   <label for="password2">Re-Enter Password</label>
+			   <input type="password" class="form-control" name="password2" id="password2" placeholder="Re-Enter Your Password">
+			 	<p class="text-warning">Error: Your passwords don't match.</p>
+			 </div>
+		  
+		  <button type="submit" class="btn btn-primary">Register</button>
+		</form>
+		</div>
+	</div> <!--  End Well -->
+</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Static Variables live on the Heap ?? maybe.
+
+Variables can hold user defined abstract data types
+
+Stack Memory - Everything is stored contiguously
+Abstract Data Types -
+  No implementation, given the fields and methods.
+
+reference types can be Primitive type, String is a primitive type in Haskell
+In Java strings aren't primitive types
+
+Linked List
+  String - Nodes of characters pointing next to each other
+    Memory for these pointers is stored on the heap (So it has to look through a lot of muck)
+    As opposed to being stored in a stack, things stored inthe stack on contiguous
+Enums
+  Sometimes they're coerced into integers(are coerced in c++)
+
+Arrays
+  "Ragged" array : Array of Arrays that are different lengths
+  

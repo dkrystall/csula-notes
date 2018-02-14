@@ -1,0 +1,6 @@
+Start with n bottles of wine, n=8
+2^3 = 8 >= n
+It is only required to have 3 taste testers,
+You separate the three testers to match all possible combinations, so not more than two testers drink the same bottles
+
+n = 8

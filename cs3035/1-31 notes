@@ -1,0 +1,32 @@
+Von Neumann machine, program initializer is created in cpu registrars
+
+Scalar variables: static, dynamic, implicit heap dynamic, explicit heap dynamics
+local variables depend on where they are in the scope.
+
+Python-
+  self. is like this. in java. This refers to the instance that's instantiated of a class.
+  def __init__(a,b){} is a constructor for Python.
+  Blocks are defined by indents.
+  global keyword lets you reassign global keywords
+  global_x = 10
+  def change():
+    global global_x
+    global_x = 20
+
+Scopes: Static vs Dynamic Scope
+    Static Scope:
+        based on the text of the program when it's compiled.
+        declaring variable - reserver memory for var. Defining Variable - stating what it is.
+        Search Process - when looking for declarations, most languages look in the immediate scope and things close-by for names
+        Static Parent/Ancestor - contains an entire scope inside of it.
+        nested function definitions are only available in the scope they're declared in
+    Dynamic Scope:
+      Uses the call stack to find variable declarations, not in the code/context.
+      So the stack checks what calls whatever, to find where it was last used.
+      Scope is checked during run-time.
+Dynamic Programming?
+A function declaration in java would be like an abstract interface/class
+
+named constant, defined by final in java. Constants should have very specific names.
+
+Strongly Typed: All type errors are checked when compiled, Java is strongly typed. Javascript is not.

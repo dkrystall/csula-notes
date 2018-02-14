@@ -1,0 +1,63 @@
+
+A 2x2 Matrix
+
+Addition :
+[a11 a12] + [b11 b12] = [a11+b11 , a12+b12]   [c11 c12]
+[a21 a22]   [b21 b22]   [a21+b21 , a22+b22]   [c21 c22]
+
+Multiplication :
+    A           B                           C
+[a11 a12] x [b11 b12] = [(a11*b11)+(a12*b21) , (a11*b12)+(a12*b22)]  [c21 c22]
+[a21 a22]   [b21 b22]   [(a21*b11)+(a22*b21) , (a21*b12)+(a22*b22)]  [c11 c12]
+
+Equal number of rows and columns is a Square Matrix
+
+
+[a11 a12 a13 a14... a1n] * [b11 b12... b1n] = [a11*b11 + a12*b21 + a13*b31 + ... + a1n*bn1]
+[a21 a22 a23 a24... a2n]   [b21 b22... b2n]
+[a31 a32 a33 a34... a3n]   [b31 b32... b3n]
+[.]
+[.]
+[an1 an2 an3 an4... ann]   [bn1 bn2... bnn]
+
+To get the product of c1, you need to do 'n' multiplications, Then there are n number of columns  and n number of rows. Θ(n³)
+
+
+assume n%2 = 0,
+Divide the rows in half and the columns in half
+[a11 a12 a13 | a14... a1n] * [b11 b12 | ... b1n] = [          |          ]
+[a21 a22 a23 | a24... a2n]   [b21 b22 | ... b2n]   [          |          ]
+[a31 a32 a33 | a34... a3n]   [b31 b32 | ... b3n]   [          |          ]
+-------------------------    ----------------      -----------------------
+[.]          |                        |            [          |          ]
+[.]          |                        |            [          |          ]
+[an1 an2 an3 | an4... ann]   [bn1 bn2 | ... bnn]   [          |          ]
+
+[          |          ] [          |          ]  [A11*b11 + A12*B21 | A11*B12+A12*B22 ]
+[   A11    |   A12    ] [   B11    |   B12    ]  [                  |                 ]
+[          |          ] [          |          ]  [                  |                 ]
+-----------------------  ---------------------- = -------------------------------------
+[          |          ] [          |          ]  [                  |                 ]
+[   A21    |    A22   ] [   B21    |    B22   ]  [                  |                 ]
+[          |          ] [          |          ]  [                  |                 ]
+
+T(n) = 8T(n/2) + 4n²
+T(n/2) = 8T(n/2²) + 4(n/2)²
+substitute T(n/2)
+T(n) = 8(8T(n/2²) + 4(n/2)²)) + 4n²
+     = 8²T(n/2²) +  4*8(n/2)² + 4n²   |  T(n/2²) = 8T(n/2³) + 4(n/2²)²
+     = 8²T(n/2²) +  8n² + 4n²
+     substitute
+     = 8²(8T(n/2³) + 4(n/2²)²) +  8n² + 4n²
+     = 8³T(n/2³) + 8²/4n² + 8n² + 4n²
+     .
+     .
+     .
+     = 8ᴷT(1) + cn²
+     = 8^lgn *1 + cn²
+     = n^lg8 + cn²
+     = n³ + cn²
+Running Time: Θ(n³)
+
+Strassen's Alg : T(n) = 7T(n/2) + Dn²
+Running Time: Θ(n^lg7) , lg7 < 3
