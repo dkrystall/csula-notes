@@ -1,0 +1,46 @@
+Merge Sort (Divide and Conquer)
+A = {3,42,52,26,38,57,9,49}
+Cut it in half.
+{3,42,52,26} {38,57,9,49}
+Cut it in half
+{3,42} {52,26} {38,57} {9,49}
+Cut in half
+{3} {42} {52} {26} {38} {57} {9} {49}
+Start Combining:
+{3, 42} {26, 52} {38,57} {9,49}
+Combine again!
+{3,26,42,52} {9,38,49,57}
+(Compare 3 to 9, 26 to 9, 26 to 38, 42 to 49, 52 to 57)
+MOR
+{3,9,26,38,42,49,52,57}
+
+
+2.3-3 pg 39)
+
+  Base case n=2
+  T(n) = nlgn = 2*1 = 2
+
+  Recursive Case :
+  T(n) = nlgn if n=2ᴷ, k>1
+  2*n = 2ᴷ⁺¹
+  T(2n) = 2nlg(2n)
+
+2.3-4  Write a recurrence for the running time of this recursive version of insertion Sort (Worst case is Θ=n²)
+
+
+2.3-7
+
+A= {7,5,1,6,2,8}
+x=7
+First you would sort the Set using merge Sort
+Then you would use a binary search to find complements of the number that add up to x
+
+2-1 Insertion sort on small arrays in merge Sort
+
+Merge sort has a constant time affixed to it (8nlgn) Insertion sort is n²
+When n=2, merge = 16, insert = 4
+n=8 Merge Sort = 192, Insert = 64
+
+When n becomes large enough , Merge sort will perform better than Insertion sort
+
+Exercise Questions on Chapter 3

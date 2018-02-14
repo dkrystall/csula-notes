@@ -1,0 +1,32 @@
+Use recursion for divide and conquer algorithm,
+For Strassen's, use [(1 2)(3 4)][(5 6)(7 8)]
+
+T(n) = 2T(n/2) + n
+What is the running time in terms of Θ?
+O(nlgn) //From crystal ball
+How to verify?
+
+g(n) = c(nlgn)  //Note: lg(a/b) = lga - lgb
+
+T(n) = 2 * C((n/2)lg(n/2)) + n   //If base isn't specified, base for log is 2.
+     = Cn(lgn - lg2) + n
+     = Cnlgn - Cn + n , C > 1
+     ≤ Cnlgn
+     = O(nlgn)
+
+T(n) = T(n/2) + 1,  O(lgn) => g(n) = Cnlgn
+     = C(lg n/2) + 1
+     = C(lgn - lg2) + 1
+     = clgn - c + 1
+     ≤ Clgn
+     = O(lgn)
+
+T(n) = T(n-1) n //Belongs to recursive insertion sort, which has O(n²) time, => g(n) = Cn²
+     = C(n-1)² + n
+     = Cn² - 2Cn + c + n , C > 1
+         n₀ > 1 => 2Cn > c+n
+         2Cn - n > C
+         n(2C-1) > C 
+
+Without the crystal ball, we need to make a Recursion Tree
+Stop dividing the tree until there is only one element in the list. When the input size is one.

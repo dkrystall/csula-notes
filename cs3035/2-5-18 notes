@@ -18,4 +18,10 @@ Enums
 
 Arrays
   "Ragged" array : Array of Arrays that are different lengths
-  
+
+  Java being "primitive" is debatable.
+
+  * in front of memory location dereferencing, giving the value
+  & in front of value, gives address
+
+  C++ no garbage collection

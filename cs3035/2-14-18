@@ -1,0 +1,43 @@
+SubPrograms
+
+Only Time you don't put the whole method implementation in Java: Interfaces / Abstract Methods
+Protocols are like Function Pointers in cpp
+Parameters -
+    Actual Parameters vs Formal Parameters:
+      🌟Actual parameter is the value being passed into a func, a Formal is the laid out parameter input by the subprogram
+        int m = 10;
+        int n = 70;
+        foo(m,n) // Actual Paramaters
+        public static void foo(int x, int y) { //x, y are formal parameters
+          System.out.println("The first is " + x + "The second is " + y);
+        }
+    🌟Python example of default values for method inputs, can also do in cpp
+    def foo (x, flavor="strawberry", weight=20):  🌟flavor and weight are keywords for the def
+      print(x, flavor, weight)
+
+    foo(15,weight=40, flavor="chocolate")
+    //prints 15, chocolate, 40
+    🌟The Less Exceptions a language has, The more Orthogonal it is
+
+    🌟kwargs is for keywords, denoted with **, args are for arguments, denoted with 1 *
+    def foo(**kwargs):
+      print(kwargs)
+    foo(a=5, b=6, c=7)
+    //prints: {1=5, b=6, c=7}
+
+Procedures and Functions: One has side effects, the other doesn't.
+  Function: Turns input into output, shouldn't have side effects
+
+local variables are usually stack dynamic
+
+c++, java, python c# only have stack dynamic locals.
+
+Pass By Value Result is only for primitive values in Java
+
+& in cpp denotes that it's a reference variable.
+  void foo(int& i){ //pass by reference
+    i = 5;
+  }
+  gets dereferenced right after
+
+Pass By Reference can cause collisions, maybe from aliasing. 
