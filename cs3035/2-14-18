@@ -40,4 +40,10 @@ Pass By Value Result is only for primitive values in Java
   }
   gets dereferenced right after
 
-Pass By Reference can cause collisions, maybe from aliasing. 
+Pass By Reference can cause collisions, maybe from aliasing.
+
+That First Next problem, Pass By Copy of Reference
+
+Reference Variables are kind of like pointers 
+
+All variables in python are objects.
