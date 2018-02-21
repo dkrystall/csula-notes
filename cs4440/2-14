@@ -1,0 +1,26 @@
+Bounded Buffer -
+  Insert() - Add's elements into the buffer, has a method to go until the buffer size matches the elemtns
+  Remove()  - Removes things from the buffer based on the out size until in == out, which should be the amount that was inserted
+  Insert and Removed are usually used together
+
+Interprocess Communication(IPC) - Sync's these methods ^
+
+Communication Models - Processes can share memory, Done by some synchronization, will see later.
+Can sync with java/cpp
+
+unix: to display processes do:
+  ps -al | grep "nano"
+
+
+process sharing:
+  Direct Communication is like a phone call (1 to 1)
+  Indirect Communication - like a public post somewhere (1 to many), usually async
+
+Blocking - sync
+non-blocking - async
+
+Remote Procedure Calls - Used with cpp to talk to things
+Remote Method Invocation - Used by java
+
+Socket - concatted IP + Port: 192.168.0.0:80
+Socket ports under 1000 are usually reserved
