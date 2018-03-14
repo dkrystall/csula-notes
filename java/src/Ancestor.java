@@ -10,14 +10,14 @@ import java.util.ArrayList;
 public class Ancestor {
     public static final int numberOfMethods = 1;
     public static void main(String[]Args){
-        System.out.println("Number of methods: "+numberOfMethods);
-        ArrayList<String> stringArray = new ArrayList<String>();
-        stringArray.add("Hello");
-        SomeObject obj = new SomeObject();
-        obj.changeOjbect(obj.arr);
-        System.out.println(obj.arr.get(0));
-        obj.arr.add("Good Luck");
-        System.out.println(obj.arr.get(1));
+        System.out.println(1.5+5);
+//        ArrayList<String> stringArray = new ArrayList<String>();
+//        stringArray.add("Hello");
+//        SomeObject obj = new SomeObject();
+//        obj.changeOjbect(obj.arr);
+//        System.out.println(obj.arr.get(0));
+//        obj.arr.add("Good Luck");
+//        System.out.println(obj.arr.get(1));
     }
 }
 
@@ -32,3 +32,4 @@ class SomeObject{
     }
 
 }
+

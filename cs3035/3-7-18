@@ -1,0 +1,80 @@
+understand orthoganality(Legos: Small amnt of rules, small number of pieces, more orthognality)
+how simplicity can help readability/reliability
+
+Von Neumann: Has CPU and memory, gets data from mem and runs instructions
+
+Know basic concepts: Difference between languages/types of programming
+declarative: tell comp what to get, not how to get it.
+
+java is a hybrid language, gets compiled to byte, then virtual runs it as machine code.
+just in time implementation
+
+6 attributes of variables: Name, &, Value, Scope, Lifetime, Type
+Special: Words that are part of the lnaguage
+reserved: Can't be uesd/changed
+Keywords: Can
+
+Aliases: Two different vars that go to same &
+Abstract/Physical mem: Physical: Byte on mem
+R and L values: Right and Left. L is Value, R is &
+Binding Time: Binding: Setting an attribute something to be a specific type.
+Dynamic: during runtime
+explicit versus implicit. implicit: Has the object decide for itself what object it is.
+Haskell has type implicity, but it's explicity typed
+Lifetime: Involved with alloc and dealloc of memory
+Stack Dynamic Var: Bindings occur at exec. Primitive type in java.
+implicit heap, puts it on the heap without telling You
+  in java, new puts it on the heap
+  python/js puts things in the heap by itself
+explicit is faster but less flexible.
+referencing env: From a particular place in code, wat can you access? (local/nonlocal)
+named constant: Final in java.
+
+Strong typing: Types always checked
+Data Type: (Values, Operations)
+Descriptor: Memory lists info about var.
+Prim type: Not defined with any other types.
+4 ints: Long, Int, Short, byte
+floats: Represented by exponent of base 2, and a fraction that goes with it. Like sci notation but base 2. has a signed bit.
+Unicode: Int rep of characters.
+Cpp vs java strings, char array and pointer. Java has a String class.
+string length: Java has a instance variable, cpp has somethin else.
+Stack vs Dynamic lelngth. Stack is befoer runtime, dynamic is during
+Array: Java has int index, max num of subscripts - related to the index.
+Fixed Stack Dynamic: Store on stack at run, but once in can't make larger/smaller
+Fixed Heap Dynamic: still can't change size, assigned at runtime
+Heterogeneous arrays: Java supports, python kinda does.
+Associative Array: Hash Function. Keys can have meaningful values. Can access in constant time.
+list: One level up in abstraction from array. List is a sequence of values. Linkedlist ? Arrays ? Ordered list of stuff.
+List comprehension, looks like math. substitute of loops.
+Indirect Reference: Pointer of where value can be found.
+Dangling Pointer: Pointer pointed to something that's dealloc.
+Lost Heap Dynamic Var: When an obj in mem is dereferenced, but it isn't deleted. Only in cpp.
+Reference Type: Java, not a primitive Type. Cpp, pointer that can't be changed.(Formal parameters)
+Mark-Sweep Algorithm: Depth first search reversal traverse. all objs that have a reference, let's the system know it can't be overridden.
+Type Checking: To see if types are compatible with each other. Takes place at different times.
+Exception to string typing in java: Casting
+Type Coersion: Have a type be another type so it can do something with another type.
+
+SubProgram:
+def: The whole block that runs. Declaration: header/prototype Abstract methods that aren't filled out.
+protocol= Paramter Profile + Return Type
+Formal Parameters: In the func definition. Actual para: What gets passed in when called.
+Keyword in formal parameters: used to set defaults.
+Proceduers / funcs
+  Proceedures: Create side effects (change value or somethin, make http req...)
+  func: Takes somethin in, returns value. no side effects.
+Design problems with subprograms: Are local variables static or dynamic? If static you can't use recursion. Are subprogram defs nested? In js they are.
+Static and stack dynamic local vars: Can't do recursion with static vars.
+In Mode: pass into a func, Out mode: Put an empty parameter, by the time the func is done, it filles in a value for it. In C#
+Pass by val: Disadvantage: have to copy stuff. Reference: Dangerous because aliases and things.
+Parameter Passing Methods: Java supports pass by value, has somethin kinda like pass by ref. Cpp: Pass by reference,
+Call program indirectly: Sub program/Func is called by a System/Framework at somepoint. Like a button.
+Function Pointer: Points to where the function is.
+Closure: Occur when you have a func that returns a func as a value. When you want a nonglobal function you do this.
+
+Subprogram Implementation:
+Activation Record: Format of a record that gets filled in. Activation Instance: The Actual record.
+Know the EP.
+Static Links for Nested SubPrograms: When you have to know where a value at a certain level is.
+Strings aren't primitives.

@@ -1,0 +1,84 @@
+Hire Assistant(n)
+  best = 0
+  for(1 to n){
+    interview i  //cost n*c
+    if candidate i is better than the best
+    {
+      if(best.empty){
+        best = i
+        hire(best)
+      } else {
+        fire(best)
+        best = i
+        hire(best)
+      }
+    }
+  }
+
+  Worst case scenario is O(n) time,
+  Best case is O(1),
+
+Expected Value
+E[x] = ∑x Pr({X=x})
+n1, n2, n3, ..., ni-1, ni, ni+1, Nn
+
+E[x] = 1 + (1/2) + (1/3) +... + 1/i +... + 1/n
+
+(j=1 to n)∑(1/j) ≤ ∫ 1/x dx = lnx| (1 to n) = ln(n)
+Candidates | Worse Case | Average case
+---------------------------------------
+10         | 10         | 10<2^4 = 16> 4
+1000       | 1000       | 1000<2^10=1025> 10
+2^32       | 2^32       | 32
+
+n1 to n5
+n=5, generate random num from 1 to n^3 (1 - 125) and assign to each n
+([n1,3], [n2,10], [n3,7], [n4,4], [n5,20])
+Sort by priority:
+n1, n4, n3, n2, n5
+
+PermuteBySorting(A)  //running time: O(nlgn), because it has to sort.
+  n = A.length
+  let P{1 ... n} be a new array
+  for(i=1 to n){
+    P[i] = Random(1,n^3)
+  } //Sort A using P as sorting key
+
+Uniform Random Permutation = 1/n!
+A[1], A[2], ..., A[i], A[i+1], ..., A[n]
+P[1], P[2], ..., P[i], P[i+1], ..., P[n]  // The rand is generated for P(Priority, which determines the order of interviews
+Events:
+E1: A[1] is smallest element in 1...n   Pr{E1} = 1/n
+E2: A[2] is 2nd smallest in     1...n   Pr{E2|E1} = 1/n-1
+  or A[2] is the smallest in    2...n
+  .
+  .
+  .
+Ei: A[i] is the smallest in 1..n    Pr{Ei | E1⋂E2⋂E3⋂E4...⋂E(i-1)}= 1/(n-i)
+  or A[i] is smallest in     i..n   Pr{En | E1⋂E2⋂E3⋂E4...⋂E(n-1)} = 1
+
+En:
+// Note : Common Probability manipulations
+//  P(A⋂B) = P(B⋂A)
+//  P(A⋂B) = P(B)P(A|B)
+//  P(B⋂A) = Pr(A)Pr(B|A)
+
+Baye's Theorem:
+
+P(A | B) = (P(A)*P(B | A))/ P(B)
+
+Pr{A⋂(B⋂C)} = Pr(A)Pr(B|A)Pr{C|(A⋂B)}
+Pr{E1⋂E2⋂..⋂En} = Pr{E1}Pr(E2|E1)Pr{E3|E1⋂E2}
+                = Pr{En | E1 ⋂ E2 ⋂ ... ⋂ E(n-1)}
+
+
+(1-x)^n >= 1-nx
+(1-x)(1-x)^n >= 1-nx (1-x)
+(1-x)^n+1 >= 1-nx-x,  0 < x < 1
+(1-nx)(1-x)
+.
+.
+.
+(1-x)^n >= 1-nx ☑️
+
+ 

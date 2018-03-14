@@ -1,0 +1,127 @@
+Master Theorem: To use the master theorem, B must be > 1
+T(n) = aT(n/b) + n^e, a > 0, b > 1
+
+case 1: c < lg𝖻a => T(n) = Θ(n^lg𝖻a)          f(n) < n^lgb a => T(n) = Θ(n^lgb a)
+
+case 2: c == lg𝖻a => T(n) = Θ(n^lg𝖻a * lgn)   f(n) == n^lgb a => T(n) = Θ(n^lgb a * lgn)
+
+case 3: c > lg𝖻a => T(n) = Θ(n^c)             f(n) > n^lgb a => T(n) = Θ(f(n))
+
+lgca = lgaA / lgaB
+
+Problem: T(n) = 2T(n/4) + sqrt(n)
+Variables from problem: a = 2, b = 4, c = 1/2
+Solution: t() 1/2 = lg4 2 (log base 4, 2)
+
+T(n) 2T(n/2) + n^4
+a = 2, b = 2, c = 4
+
+T(n) 2T(n/2) + n^4 lgn
+n^4lgn > n^1 => T(n) = Θ(n^4lgn)
+
+
+T(n) = 3T(n/4) + nlgn 
+nlgn > n^lg4 3 => T(n) = Θ(nlgn)
+
+
+Strassen - Case 2
+T(n) = 7T(n/2) + n^2 => T(n) = Θ(n^lg2 7)
+a = 7, b = 2, c = 2
+
+n^2 < n^lg2 7
+2    < lg2 7 < 3
+lg2 4< lg2 7 < lg2 8
+
+T(n) = 2T(4n/3) + nlgn => 2T(n/(3/4)) + nlgn
+a=2, b=3/4, c | f(n) = nlgn
+
+// lgb a/c => lgb a - lgb c
+
+nlgn  ? lg3/4 2 => lg2 2 / lg2 3/4 => 1 / lg2 3 - lg2 4 => 1 / (lg2 3 - 2)
+
+nlgn > n^lg3/4 2 => T(n) = Θ(nlgn)
+
+Arithmetic Sequence
+n + n - 1 + n-2 .... + 1 = n(n-1) / 2
+
+T(n) = 3T(n/3) + nlgn
+a = 3, b = 3, f(n) = nlgn
+nlgn > n^lg3 3 = n    nlgn is not polynomially larger, cannot use master theorem
+f(n) / nlgba = nlgn / n = lgn
+
+T(n) = 3T(n/3) + n / lgn
+a = 3, b = 3, f(n) = n/lgn
+n/lgn  ?  n^lg3 3
+n/lgn  ?  n
+
+n/lgn < n
+
+n^lgb a / f(n)  = n / (n/lgn) = lgn   lgn is not polynomially larger, cannot use master theorem
+
+
+
+T(n) = 3T(n/3) + n*sqrt(lgn)/ lgn
+
+a = 3, b = 3, f(n) = n*sqrt(lgn)/ lgn
+
+n*sqrt(n) / lgn  ?  n
+
+n*sqrt(n) / lgn  >  n => T(n) = Θ(n*sqrt(n) / lgn)
+
+Can't use master theorem for following:
+1) T(n) isn't monotone ie: T(n) = T(n/2) + sin(n)   Pretty much anything that's fluctuating
+2) T(n) is not polynomial ie: T(n) = 2T(n/2) + 2^n   The 2^n is nonpolynomial, it's exponential. exp isn't covered on master theorem
+3) a,b can't be expressed as a constant ie: T(n) = sqrt(n)T(sqrt(n)) + f(n) sqrt(n) isn't a constant
+
+T(n) = 3T(n/4 - 17) + n^2   Just remove the 17, at high recurrences a constant doesn't matter.
+     = 3T(n/4) + n^2
+
+Somewhere between recursion tree and sub, because we can't use master theorem
+T(n)   = 3T(n/3) + n/lgn
+T(n/3) = 3T(n/3^2) + n/3 / lg(n/3)
+Substitute back into t(n)
+       = 3(3T(n/3^2) + n/3 / lg(n/3)) + n/lgn
+       = 3^2T(n/3^2) + n/lg(n/3) + n/lgn
+substitute: T(n/3^2) = 3T(n/3^3) + n/3^2 / lg(n/3^2)
+       = 3^3T(n/3^3) + n/3^2 / lg(n/3^2) + n/lg(n/3) + n/lgn +... _ n/lg(n/3) + n/lgn
+
+       = 3^kT(n/3^k) + n/lg(n/3^(k-1)) + n/lg(n/3^(k-2)) + .... + n/(lg(n/3)) + n/lg(n/3^0)
+       = n * ∑(i=0, to k-1): 1/lg(n/3^i)
+       lg(n/3^i) = lg(n/3^(k-1)) => lg(n/(lg3^lg3 (n-1)))
+       =3^(lg3 n) T(1) + nlnlgn
+       = nT(1)+nlnlgn
+       = Θ(nlnlgn)
+
+Extended Master Theorem : Covers area between case 1-2 and case 2-3
+
+T(n) = aT(n/b) + f(n)
+E = lgb a
+case 1: If f(n) = O(n^E(lgb n)^⍺) with ⍺ < -1
+        Then T(n) = Θ(n^E)
+case 2: If f(n) = Θ(n^E(lgb n)^-1)
+        Then T(n) = Θ(n^(E)lgblgb n)
+case 3: if f(n) = Θ(n^E (lgbn)^⍺) ⍺> -1
+        Then T(n) Θ(n^E(lgb n)^⍺+1)
+case 4: if f(n) = Ω(n^(E+E))  E>0
+        Then T(n) = Θ(f(n))
+
+
+T(n) = 2T(n/2) + n(lgn)
+case 3: a = 2, b = 2, f(n) = n(lgn)^1
+T(n) Θ(n^E(lgb n)^⍺+1)
+T(n) Θ(n^lgb a(lgb n)^⍺+1)
+T(n) Θ(n^1(lg n)^(1+1))
+T(n)= Θ(n(lgn)^2)
+
+T(n) = 3T(n/3 - 2) + n/2
+a = 3, b = 3, f(n) = n/2
+theta(n^ln3 3(ln3 n))
+
+T(n) = 4T(n/5) + nlgn
+a =4, b = 5, c = f(n)
+nlgn ?  n^(lg4 /lg1/5)
+nlgn >  n^(lg4 /lg1/5)
+
+
+T(n) = T(n) = 2T(n/2) + n/lgn
+theta(n*sqrt(n) / lgn)
