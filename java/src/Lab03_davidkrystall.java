@@ -12,7 +12,7 @@ public class Lab03_davidkrystall {
     }
     public static void add(){
         int x = 5;
-        float y = 3.5;
+        double y = 3.5;
         System.out.println(x+y);
     }
 

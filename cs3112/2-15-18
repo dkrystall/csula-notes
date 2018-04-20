@@ -20,7 +20,7 @@ T(n) 2T(n/2) + n^4 lgn
 n^4lgn > n^1 => T(n) = Θ(n^4lgn)
 
 
-T(n) = 3T(n/4) + nlgn 
+T(n) = 3T(n/4) + nlgn
 nlgn > n^lg4 3 => T(n) = Θ(nlgn)
 
 
@@ -102,7 +102,7 @@ case 2: If f(n) = Θ(n^E(lgb n)^-1)
         Then T(n) = Θ(n^(E)lgblgb n)
 case 3: if f(n) = Θ(n^E (lgbn)^⍺) ⍺> -1
         Then T(n) Θ(n^E(lgb n)^⍺+1)
-case 4: if f(n) = Ω(n^(E+E))  E>0
+case 4: if f(n) = Ω(n^(E+E))  E>0m
         Then T(n) = Θ(f(n))
 
 

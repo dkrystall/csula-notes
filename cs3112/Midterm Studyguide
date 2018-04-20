@@ -3,3 +3,37 @@ Merge sort is nlgn, fastest
 
 Do pg. 61 3-1 to 3-4.
 These will be on exam
+
+3-2)
+
+f(n)   g(n)     A = O(B)  A=o(B)...
+  A     B         | O o Ω ⍵ Θ
+-----------------------------------------------------------------
+lg^k(n) n^k       | y y n n n  /
+n^k     c^n       | y y n n n  /every exponential is upper bound of polynomial
+√n      n^sin(n)  | n n n n n  /sin n oscillates from 1 to neg 1, so impossible to set upper/lower bound.
+2^n     2^n/2     | n n y y n  /
+n^lg(c) c^lgn     | y n y n y
+lg(n!)  lg(n^n)   | y n y n y
+
+if f(n) = O(g(n)) & f(n) = Ω(g(n)), then f(n) = Θ(g(n))
+
+3-3) Ordering by asymptotic growth rates
+group log funcs together, group poly together, group exponentials together
+Divide them up based on the growth rate.
+
+3-4)
+Prove/Disprove
+a) f(n) = O(g(n)) => g(n) = O(f(n))
+      false, n=O(n^2), n^2 !=O(n)
+
+only pick one order: O(n) or O(nlgn)...
+
+b) f(n)+g(n) = Θ(min(f(n),f(n)))
+f(n) = n
+g(n) = n^2
+
+min(n+n^2) != Θ(n)
+
+
+Do some questions on chapter 6/7, will go over after spring break 

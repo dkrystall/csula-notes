@@ -1,0 +1,11 @@
+A={e1, e2, e3, ..., en}
+A={E1, E2, E3, ..., En} //E are whatever e was swapped.
+P{E1} = 1/n  //prob that E1 is in this position
+P{E2|E1}= 1/n-1
+P{En|E1⋂E2...⋂En} = 1/1
+P{E1}P{E2|E1}...P{En|E1⋂...⋂En-1} = 1/n* 1/n-1 * 1/n-2 * ... * 1/2 * 1  = 1/n!
+Reandomize-in-place(A)
+  n=A.length
+  for (i = 1 to n){
+    swap A[i] with A[Random(i,n)]
+  }

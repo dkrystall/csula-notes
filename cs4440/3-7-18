@@ -1,0 +1,8 @@
+pg 14, subscript for tau should be n+1, not n=1.
+Guessing burst times is based on previous Events
+Guess is arbitrarily started, pg 16 of ch5 notes puts it at 10.
+So the first guess is usually pretty random.
+
+the longer ago the event was, the lower its score impacts your guess.
+
+if n = 360, the first event(360) would weigh on your current tau would be small.

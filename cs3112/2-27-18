@@ -1,0 +1,67 @@
+S = {a,b,c}
+permutations: abc, acb, bac, bca, cab, cba
+n*(n-1)*(n-1)*...*2*1 =  n!, n! is number of permutations allowed
+
+combinations: nCr = (n!)/(r!(n-r)!), order doesn't matter
+S = {a,b,c}
+3 C 2 = (3!)/(2!(3-2)!) = 3
+
+Probability:
+  Sample Space - All possible ways something can happen.
+    Coin Flip - Head and Tail is the sample space. {H,T}
+      Two Flips - {HH, HT, TH, TT} 2^2
+      Three Flips - {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT} 2^3
+      ...
+  Event - Possible Outcome
+    P(H) = Count the number of events, and count the sample space.
+    P(H) = 1/2
+    P(HH) = 1/4
+
+  If Sample space is Finite:
+  Every element s ∊ S has Probability:
+    Pr{s} = 1/|S|
+
+  n balls in a jar.
+    S = {b1, b2, b2,...,bn}
+    Pr{bi} = 1/n
+
+Discrete Random Variable:
+  S = {Sequences of 3 tosses of a fair coin}
+    = {HHH, HHT, HTH, HTT, THH, THT, TTH, TTT}
+  x = {3  , 2  , 2  , 1  , 2  , 1  , 1  , 0}
+  DRVx = {The number of heads in a sequences}
+
+Probability Mass Function
+  px(x) = Pr({X = x}), x is the random Variable
+  px(x) = Pr{X = x}
+  Px(x) = {1/4 if x = 2} Pr{x=2}
+  Px(x) = {1/2 if x = 1} Pr{x=1}
+  Px(x) = {1/4 if x = 0} Pr{x=0}
+
+  P{x>0} = 1/4+1/2 = 3/4
+
+Expected Value, E:
+  E{x} = ∑x*Pr({X=x})
+  Ex: Toss a fair coin twice
+    1. You earn $3 for each head
+    2. You lose $2 for each tail
+
+    S = {HH, HT, TH, TT}
+    Let x be a Random Variable for earning
+    X = 6, 1, 1, -4
+    E[x]= ∑x*Pr({X=x})
+    Pr(X=6)  = 1/4
+    Pr(X=1)  = 1/2
+    Pr(X=-4) = 1/4
+    E[x] = 6*1/4 + 1*1/2 + 1/4*(-4)
+         = 1.5 + .5 -1
+         = $1, might as well play
+    Return a 2 var array,
+
+    Divide and conq will have 8 recursive calls.
+    Strassens: Will have the 10 matrices, then make 7 recursive calls.
+    int[][] x = squareMatrix()
+    All you have to do is add/subtact for the matrix multi
+                squareMatrixSub,
+                squareMatrixAdd,
+                StrassensSquareMatrixMulti()
