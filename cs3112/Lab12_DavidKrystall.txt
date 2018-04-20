@@ -1,0 +1,39 @@
+
+1)
+Maximum number of nodes is 2^(h) - 1, h >= 1
+Minimum number: If each node only has one child, then the minimum number of nodes is h.
+Maximum Height of BST: the maximum height of n nodes is n if the tree is constructed with the minimum number of nodes n
+Minimum Height of BST: the minimum height is  2n -1 for a Full BST
+
+2)
+  counterexample:
+  if the search path is all of the rightmost nodes, then C would be the A would be greater than b.
+
+3)
+  Tree_Predecessor(x)
+    if x.left != nil
+      return Tree_Max(x.left)
+    y = x.p
+    while y!= NIL and x == y.left
+      x = y
+      y = y.p
+    return y
+  Tree Max(x)
+    while x.right != NIL
+      x=x.right
+    return x
+
+4)
+If a BST has a root and two children, there are 3 nodes. The order of the tree must be  Left < Root < Right. if the height of the tree is 2 then the successor/predecessor can't have children.
+
+preOrder: 5, 3, 7
+  predecessor (x = 3):
+  y = 5
+  x != y.left
+  return nil
+
+  successor (x = 7)
+  y = 5
+  x = 5
+  y = nil (no parent of 5)
+  return  nil

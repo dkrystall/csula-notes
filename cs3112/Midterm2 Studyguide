@@ -1,0 +1,69 @@
+Insertion Sort - data spread However
+Counting Sort - Repitition and Small Range are good
+Radix Sort - Works well in general
+
+Array = {1,2,3,4,5,6,7,8,9,10}
+
+How many computations are requried to sort A, if insertion sort is used?
+9.
+
+How many comparisons are req to sort if selection sort is used?
+Assume first one is smallest, them compare with the rest of the elements, then swap.
+9+8+7+6+5+4+3+2+1 = 45 (n^2)/2      45
+
+Quicksort? 45
+
+MergeSort? Think it's keep dividing in half, then recombine. so 10?
+
+Know result of array after you run Max Heapify
+Run max heapify(A,3) on A= {27,17,3,16,13,10,1,5,7,12,4,8,9,0}  //index starts at 1, not 0.
+
+For an array of n records, what is the height of max heap tree?
+
+What's the running time of heapsort on array of length n that's already sorted in increasing order?
+decreasing?
+
+Worst case running time of heapsort?
+
+Run partition (A, p, r) on A = {6,4,10,7,4,9,2,8,1,5}
+
+What value of q does partition retunr when all elements in the array A[p..r] has the same value?
+What would be a running time of Quicksort in this case?
+
+What's the best case runing time of Quicksort?
+ What's the worst case runing time of Quicksort? How can we improve running time?
+
+Run countingSort(A,B,6) on A = {6,0,2,0,1,3,4,6,1,3,2}
+Show the contents of array C and B. Make sure to show the C array
+
+What is the smallest possible depth of a leaf in a decision tree for a comparison sets
+
+Choose The best suitable algorithm from the list to solve each of the following problems:
+Randomized
+Insertion sort
+Merge sorted
+Heap sorted
+quick sorte
+counting sort
+radix sort
+bucket sort
+none
+
+Suppose we need to sort the pop by age, wat sort would work best?
+Bucket sort //It's the best because we only have ~100 buckets  Or Counting sort would work. Bucket is better
+
+Need to sort the population by height, what algorithm would work best?
+Bucket + Radix sort
+
+Suppose we need to sort the ABC Bank Customers by their account num. Assuming each customer has a unique account number, what sorting algorithm would work best to sort the account numbers?
+Radix Sort. We have a fixed # of digits with the account number.
+
+Suppose we have an array with duplicate keys, and the keys are associated with satellite data and the order of duplicate keys in the array must be kept while the array is sorted by the keys. What sorting algorithm would work best for this array?
+
+A = {(5,A), (4,A), (4,B), (5,B), (4,C),(5,c)}
+After we sort, maintain the order of the satellite data
+ =  {(4,A), (4,B),(4,C),(5,A), (5,B),(5,c)}
+ Can accomplish this with any stable sort.
+
+ Suppose a dynamic set S is represented by a direct-address table T of length m.
+ Describe a procedure that finds the max element of S. What is the worst case performance of your procedure?

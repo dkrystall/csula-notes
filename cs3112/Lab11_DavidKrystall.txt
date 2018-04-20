@@ -1,0 +1,21 @@
+David Krystall
+CS3112
+1) We would have a two dimensional array, the first value would be the word, the second values would be the index the word appears in.
+We want to keep the order correct so we would use: Counting, Radix, Merge or Insertion Sort to correct the values/Keys.
+
+Step 1: Get the document
+Step 2: When a new word appears, make the word a key, append the index to the values for the key.
+Step 3: When a word that's already tokenized appears, add its value to the values for that key.
+
+2)
+The Data structure would be a multi-map, an array with sub arrays at each index for values of the map.
+The operations would be O(1) because you have the exact index(Key: k) that you're looking up in the map.
+
+get(k):
+  k is a key, look up that key in the hashmap, return the values for that key
+put(k,v):
+  k is a key, v is a value, find the hashed value for k, then insert the values at hashed k in the map.
+remove(k,v):
+  go to hashed index k in the map, delete corresponding values v.
+removeAll(k):
+  delete values at index k, then delete k.

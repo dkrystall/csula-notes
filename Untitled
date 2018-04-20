@@ -1,0 +1,46 @@
+perOrder(root)
+if (root != nil)
+  print root.value
+  print root.left
+  print root.right
+
+postOrder(root)
+if(root != nil)
+  print root.left
+  print root.right
+  print root.value
+
+Breadth First Search 
+  looks at entire row
+
+Predecessor: Value that's lower than root, doesn't matter which level it's on
+Successor: Value that's higher than root, doesn't matter which leve it's on
+
+Tree_Successor(x)
+  if x.right != nil
+    return Tree_Min(x.right)
+  y = x.p
+  while y!= nil && x == y.right
+    x = y
+    y = y.p
+  return y
+Tree_Min(x)
+  while x.left != nil
+    x = x.left
+  return x
+
+
+  Tree_Predecessor(x)
+    if x.left != nil
+      return Tree_Max(x.left)
+    y = x.p
+    while y!= NIL and x == y.left
+      x = y
+      y = y.p
+    return y
+  Tree Max(x)
+    while x.right != NIL
+      x=x.right
+    return x
+
+Time is based on the height of the tree.

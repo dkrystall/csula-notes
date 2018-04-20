@@ -1,0 +1,9 @@
+1 - (5/100+5/99+5/98+5/97)
+~80% chance will be accepted with 5 defective cars.
+
+Coin: TT or HH or TH
+P(opposite face is tails | can see heads) = 50%
+
+If we can see the Head side, only two coins have heads. Only one of the two coins can have tails on the other side
+
+ch 1- slides: 3,10,11, 13, 23, 24, 25,26, 27

@@ -1,0 +1,63 @@
+Queue - first in first Out
+Max Heap - no child is larger than parent. Largest element at root. Root cannot be deleted?
+//Single LinkedList has no set memory size
+ArrayList has a set size
+Event driven simulator - each event has a timer to execute. with 1000 events, we manage them by using a heap data structure
+  Priority Queue(Max Heap)
+    insert(s,x)         |  O(lg(n))
+    max()               |  O(1)
+    extractMax()        |  O(lg(n))
+    increase_key(s,x,k) |  O(lg(n))
+    size()              |  O(1)
+    isEmpty()           |  O(1)
+
+  l = [10,5,12,15,16,..]
+
+  //O(lg(n)) is almost constant time when run at 2^32
+
+  Priority Queue(Min Heap)
+    insert(s,x)         |  O(lg(n))
+    max()               |  O(1)
+    extractMax()        |  O(lg(n))
+    increase_key(s,x,k) |  O(lg(n))
+    size()              |  O(1)
+    isEmpty()           |  O(1)
+
+
+Quick Sort
+  a = {2,8,7,1,3,5,6,4}
+pass 1, swap i with j (2 with 2)
+  a = {2,8,7,1,3,5,6,4}
+pass 2, swap i with j, (1 with 8)
+  a = {2,1,7,8,3,5,6,4}
+pass 3, swap i with j (3 and 7)  i=3, j =5
+  a = {2,1,3,8,7,5,6,4}
+pass 4, j is at 6, exits and swap A[r]
+  a = {2,1,3,4,7,5,6,8}
+  left and right half of partitions : a = {2,1,3,4}{7,5,6,8}
+
+Loop Invariant:
+  1. All entries in A[p..i] are <= pivot
+  2. All entries in A[i+1...j-1] are > pivot
+  3. A[r] = pivot
+
+Init: i = p-1
+      j = p
+      Thus, no element between i and p, and i+1 and j-1
+
+Maintenance:
+  1) if A[j] > x, increment j, then for A[j-1] and all other elements are not changed.
+  2) if A[j] <= x,
+    1)increment i
+    2) swap A[i] with A[j]
+    3) increment j
+  3) Then all properties are satisfied
+
+Termination:
+  Loop Terminates when j = r
+  All elements smaller than pivot will be placed Left and all elements larger than pivot will be placed to the right of the pivot
+  3 sets:
+    1) less then or equal to pivot
+    2) greater than pivot
+    3) pivot
+Worst Case: Theta(n^2)
