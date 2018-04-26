@@ -1,0 +1,84 @@
+Lookup: Loop Invariant
+
+
+6.1-1 if we have a heap of height h, what is the minimum node, what's the maximum
+MAX HEAP TREE
+All heap trees are complete. One of the leaf nodes will be the smallest element
+Complete means- the order of children goes left to right, you can't skip any children.
+can't run max heapify on leaf nodes on the lowest level. So all the n/2 nodes
+Height of heap tree is bounded by log(n).
+
+root node,
+add left
+add right
+
+      Root
+    L     R
+  L  R   L  R
+
+height: h, max = 2^h, min = 2^(h+1) - 1
+
+With just the root, the height is 0.
+
+Heap - The root has the largest element
+
+In a sub-tree, no parent is smaller than its children
+
+6.1-5 If an array is sorted ascended, is it going to be min-heap automatically? Yes.
+
+6.1-6 - Is this a max heap? No. 6 and 7 have to be swapped.
+
+If we have any heap, the leaf nodes will be indexed by n/2.. half the array will be a leaf node.
+
+6.2-1. See pic, 3 recursive calls.
+
+6.2-2. Flip greater than with less then, instead of looking for the largest, look for the smallest.
+
+
+6.2-6 if we have n nodes, worst case it's going to run log(n) times. Max heapify has to run down to the leaf node.
+the height is log(n), so that's the maximum amount in can run.
+
+6.3-1)
+
+Max amount of nodes in a heap tree: [n/(2^(h+1))] Can't have more than this.
+The head of the tree is log base 2 n
+Max height: h+1-1 //look this up.
+
+Worst case running time of heapsort is nlog(n)
+
+Max heapify has to start at the bottom. The first non leaf node from the right.
+
+
+6.4-3) running time of heapsort if array is sorted in increasing order inserting elements takes nlog(n)
+max heapify for the last element takes log(n) time.
+
+skip priority Queue
+
+Quicksort:
+Every single element of the array has to be compared with a pivot
+
+7.1-1)
+
+7.1-2) What value will be returned? r will be returned if they're all the same size.
+
+How to rewrite partition algorithm to sort opposite way? Reverse the < symbol.
+
+If all the elemtns are the same value, the running time will be O(n^2), has to check all the elements.
+
+7.2-1) When we remove a theta, we have a constant.
+
+If a list is already sorted, the running time of insertion sort is linear. The number of comparisons we have to do is minimized.
+
+
+8.1-1, what is the smallest possible depth of a leaf in a decision tree of size n.
+    n-1
+Maximum number of leaf nodes: n!
+
+8.1-2) because the upper bound and lower bound of lg(n!) are the same, theta is nlgn.
+
+When you're sorting by comparison you can't do better than nlgn
+Once you start comparing you're stuck with nlgn
+No cpmarison sort can be done in linear time.
+
+Merge sort has high overhead, it splits everything up.\
+The point where the one sorting algorithm outperforms  another 
