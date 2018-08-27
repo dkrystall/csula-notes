@@ -1,0 +1,16 @@
+num 1 might be right 
+num 10 might be right
+
+Greedy Algorithms
+Dynamic programming 
+
+
+Graphs use greedy algorithms
+
+
+Got to treasure island, See all the treasure. We can only take 15 lbs of treasure back 
+how do we decide which treausre to take back? Use a dynamic program. Chapter 15.
+
+Fibonacci can be improved by using a dynamic program that stores previous values of fibonacci numbers.
+
+

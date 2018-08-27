@@ -1,0 +1,20 @@
+20% - Reflection Essay
+Main Goal - Requirements Document (Should be an actual guide)
+Things to master:
+    ROS (Python) ⭐️
+    Arduino (cpp)
+    Motion Planning/Control - controlled by Houston(state machine patterns)
+        Motion logic for Robots, controlling Robots
+    Computer Vision - (Object Detection)
+        -Traditional: OpenCV
+        -new: Deep Learning (cornell is good at deep learning)
+            Neural Nets, Machine Learning, AI, Data Science, Images/graphics...
+    Hydrophones? coordinate, angle, distance - 
+    
+    Try to think of the project in individual tasks/states
+    lots of pool testing
+    understand all the sensors on the sub and how they work irl
+
+18.0.4
+learn about ROS 
+find out what i like the most of all these masteries

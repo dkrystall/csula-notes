@@ -1,0 +1,32 @@
+Electrical Charge
+    w = u = F*DeltaH = |g| = G(M)(m)/r, This is for gravitational fields 
+    so, F = ma 
+    F = G(m)(M)/r^2 , = m[GM/r^2] = ma  (G = 6.67x10^-12 Nm^2/kg^2)
+    F = qE, where E is electric field vector, and q is the charge
+
+    Smallest unit of charge is an electron (e⁻) (that we're concerned with)
+    e⁻ = -1.6 x 10^-19 C, where C is Coulombs
+    //current is charge per time. 
+    Coulombs law is the force between charges 
+
+    Like Charges, ++, --, repellent force
+    Unliked charges +-, attractive force  
+    F = kq₁q₂/r² = q₁[kq₂/r²]
+
+Hydrogen Aatom 
+    proton:   q+ =  1.6 x 10^-19 C
+    electron: q- = -1.6 x 10^-19 C
+    (see bohr model) 
+    {q+ >>>>a₀<<<< q- }, these forces are equal and opposite 
+    {   F-+     F+-   }
+
+    k = 1/ 4pi∑₀ = 9x10^9 Nm^2 / C^2
+    Ground state, a₀ = 0.528 x 10^-10 m  a₀ = Ground state Radius
+
+    F𝚌 = -(9x10^9 Nm^2/C^2)(1.6 x 10^-19 C)^2 / (0.528 x 10^-10 m)^2  = 2.56 
+
+    Triboelectricity
+
+    metals are conductors
+    all wires have electric fields
+    

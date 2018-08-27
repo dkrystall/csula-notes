@@ -1,0 +1,152 @@
+Both BFS and DFS work with Directed / Unidrected Graphs 
+Breadth First Search
+
+BFS(G,S) //Graph, Starting point
+    for each vertext u ∈ G.V - {S}   //For each vertex in the graph, minus the source, set the color 
+        u.color = white
+        u.d = infinity  //d is an attribute for distance, how many hops from the source 
+        u.pi = NIL //parent 
+        S.color = Gray
+        S.d = 0
+        S.pi = NIL 
+        Q = 0 //Q = queue 
+        Enqueue(Q,S)
+
+        while(Q != Empty){
+            u = dequeue(Q)
+
+            for each vertex v ∈ G.Adj[u]
+                if(v.color == white){
+                    v.color = gray
+                    v.d = v.d + 1
+                    v.pi = u
+                    Enqueue(Q,v)
+                }
+                u.color = Black 
+        }
+
+adjList = {(s,(w,r)), (r,(s,v)), (t,(u,x,w)), (u,(y,x,t)), (v,(r)), (w,(s,t,x)), (x,(t,u,y,w)), (y,(u,x))}
+Queue: s
+u = s
+// run above algorithm 
+
+BFS(adjList, s) // take the above list, start at s
+at the start, s is gray, everything else is white. 
+/* beep boop beep */
+Then BFS Gives us a Tree where the root is the Starting node, gives us the minimum number of hops.
+Running time for BFS is Θ(V+E) //visits the vertices and edges once
+
+Depth Frist Search checks to see if ther even is a path to the requested node
+
+{
+
+    public time = 0
+    DFS(G)
+        for each vertex u ∈ G.v{
+            u.color = white
+            u.pi = NIL
+        }
+        time = 0
+        for each vertex u ∈ G.v {
+            if u.color == white {
+                DFS-Visit(G,u)
+            }
+        }
+
+    DFS-Visit(G,u){
+        time += 1
+        u.d = time
+        u.color = Gray 
+        for each v ∈ G.adj[u] {
+            if v.color == white {
+                v.pi = u
+                DFS-Visit(G,v)
+            }
+        }
+        u.color = black 
+        time += 1
+        u.f = time // f is Finish Time 
+    }
+
+}
+
+adjList = {(s,(w,z)), (t,(u,v)), (u,(t,v)), (w,(x)), (x,(z)), (y,(x)), (z,(w,y))}
+- Run DFS(adjList)
+set all colors to white, set all parents to nil. 
+time = 0
+DFS-Visit(G, s) // we take s because it's the start of the adjacency list.
+    u = s
+    time = 1
+    s.color = gray
+    for each child in s //(z,w)
+    z.pi = s,
+    DFS-Visit(G,z)
+        will visit Z's children (w,y)
+        DFS-Visit(G,w)
+            will visit w's children (x)
+            DFS-Visit(G,x)
+                will visit x's children (z)
+                DFS-Visit(G,z)
+                    will visit z's children (w,y)
+                    w is gray, 
+                    DFS-Visit(G,y)
+                        will visit y's children(x)
+                        x is already gray, break
+                    done visitng, z = black 
+
+DFS Starts based on however your nodes are setup, whichever way it's sorted, it's stuck in that order
+
+A tree is a subset of a graph, where the graph doesn't have cycles
+
+Trees don't have cycles 
+
+n-1 edges in a tree. If there are more than n-1 edges in atree, it's not a tree
+
+Minimum Spanning Tree 
+Generic MST(G,w){
+    A= 0
+    while A does not form a spanning tree {
+        find an edge(u,v) that's safe for A 
+        A = A V {(u,v)}
+    }
+    return A 
+}
+
+MST_KRUSKAL(G,w){
+    A = 0
+    for each vertex v ∈ G.V{
+        make a set (v)
+    }
+    sort the edges of G.E into nm-decreasing order by weight w
+    for each edge(u,v) ∈ G.E take in nm-decreasing order by weight 
+    if Find-Set(u) != Find-Set(v){
+        A = A V {(u,v)}
+        UNION(u,v)
+    }
+    return A 
+}
+
+{a} {b} {c} {d} {e} {f} {g} {h} {i}
+(h,g) (g,f) (i,c) (a,b) (i,g) (h,i) (c,d) (a,h) (b,c) (d,e) (e,f) (b,h) (d,f) 
+{a} {b} {c} {d} {e} {f,g,h} {i}
+
+If there are duplicat weights, the minimum spannning tree won't be unique
+Running time is Θ(nlgn )  or (Elg V)
+
+MST_PRIM(G, w, r){  //Start at vertex r 
+    for each vertex u ∈ G, V{
+        u.key = inf
+        u.pi = nil 
+    }
+    r.key = 0 
+    Q = G.v // min priotirty Queue 
+    while Q != 0{
+        u = EXTRACT_MIN(Q)
+        for each v ∈ G.adj[Q]{
+            if v ∈ Q and W(u,v) < v.key {
+                v.pi = u
+                v.key = w(u,v)
+            }
+        }
+    }
+}

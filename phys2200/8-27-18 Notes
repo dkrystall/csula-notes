@@ -1,0 +1,48 @@
+conductors and insulators
+    conductors - conductos can pass eleectricity, copper is a good one. Van degraff 
+    insulator - nylon, insulators are bad at passing charge 
+    Current kills you, voltage isn't so bad. 
+
+opposites charges attract, like charges repel 
+ground - accepts an 'infinite' amount of charge without changing its potential, stays at zero charge 
+
+F = k |q1q2| / r^2 
+
+test charge: Infinitesemally Small Positive Charge.  One unit is 1.6 * 10^-19
+Won't have any effect on the EF you're trying to test.
+
+What's the EF at a point in space: Think of it as putting a test charge there. 
+
+r vector always points toward the point being tested 
+
+EF = 1/4piϵ₀(q/r²)ṝ
+
+think of p as a test charge. r vector always points toward p(test charge)
+
+E = 1/4piϵ₀(q/x²)î + 1/4piϵ₀(q/y²)ĵ + 1/4piϵ₀(q/z²)ǩ
+
+Workshseet pg 2:
+
+Use coulombs law to figure out the charge to pass
+
+dĒ = 1/4piϵ₀(dQ/r²)ȓ = 1/4piϵ₀(dQ/x²+a²)ȓ
+dE = 1/4piϵ₀(dQ/x²+a²)
+dE𝗑= dEcos⍺
+dE𝗑 = 1/4piϵ₀(dQ/x²+a²)cos⍺
+
+dE𝗑 = 1/4piϵ₀(dQ/x²+a²)(x/√(x²+a²))
+
+ƛ⩰ Q/2pia <- circumference 
+dQ = ƛds  ds is a piece of the circumference of the hoop
+
+dE𝗑 = 1/4piϵ₀(ƛx /(x²+a²)^(3/2))
+E𝗑 = 1/4piϵ₀(ƛx /(x²+a²)^(3/2)) |2pia tp 0|∫ 
+
+
+Ends up being coulombs/meter 
+
+
+
+
+cos⍺ = x /√(x²+a²)
+

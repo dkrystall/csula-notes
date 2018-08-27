@@ -1,0 +1,7 @@
+Page size considerations:
+Small page sizes lead to large table sizes
+i/o overhead, each time an item is swapped from mem to hard disk or vice versa, cpu scaling is the overhead
+locality - what is put in one page. If the page is big, everything can fit in the one page. Locality is good in this case.
+    If the page size is too big, it can't share the space with other processes. That's bad.
+final exam: 5/16/2018(Monday) - 3:30 - 4:30
+Original final exam: 5/16/2018(Wednesday) - 2:30 - 3:30
