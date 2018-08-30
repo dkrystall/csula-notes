@@ -1,0 +1,30 @@
+Calculating End to End Delay, deck: Week_2-1, slide 16 
+
+packet = 1500 B or 12000 b 
+propagation speed = 2.5 * 10^8 m/s
+trans rate = 2Mbps
+Switch/link processing delay = 3 ms
+i1 = 5000 km
+i2 = 4000 km
+i3 = 1000 km 
+
+L = 1500B = 12000 b 
+s = 2.5*10^8 m/s 
+R = [i1,i2,i3], 3 links 
+
+d1 = 5000000 m 
+d2 = 4000000 m 
+d3 = 1000000 m 
+s1 = 2.5*10^8 m/s 
+R1 = R2 = R3 = 2000000 bps
+
+L/R1 = 12 / 2000 = 6 / 1000 = .0006 sec = 6 ms 
+L/R2 = 6 ms 
+L/R3 = 6 ms 
+d1/s1 = 5 / 250 = 1 / 50 = .02 = 20ms 
+d2/s2 = 4 / 250 = .016 = 16 ms 
+d3/s3 = 1 / 250 = .004 = 4 ms 
+switch delay = 3 ms x 2 links = 6 ms 
+6+6+6+20+16+4+6 = 64 ms 
+
+Start -> Router 1 -> Router 2 -> End(Link 3)
