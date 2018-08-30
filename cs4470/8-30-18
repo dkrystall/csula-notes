@@ -1,0 +1,58 @@
+Packet Loss:
+    Reasons:
+        Queue(Buffer is full), arrives to queue and there's no room for it and it gets sdropped
+        Network is too slow in wireless communication
+        Shared broadcast channel(If more than one user sends a packet at the exact same time)
+        ⭐️Packet Loss Probability = #Packets Dropped / #Total Packets
+
+Throughput: Speed to dump a file from the source to its destination 
+    T-rate = bits/time (Bits transferred between sender/receiver)
+    Usually measured in Gbps
+    Different links have different transmission speed
+    If there's only one link between the source and destination
+        if that link has a speed of 1Gbps
+        Then the bandwidth is 1Gbps 
+        And the throughput is 1Gbps
+    ⭐️If there are multiple links between them, the throughput is the minimum/bottleneck link
+        (The slowest link)
+    
+hostA to hostB
+Links R1, R2, R3
+R1 = 500 kbps
+R2 = 2 Mbps
+R3 = 1 Mbps
+How long from host A to B if file size is 2 Mb?
+1) Throughput is 500 kbps, 2 Mb file takes 4 seconds if R1 = 500kbps (Slowest Link)
+How long from A to B if R2 = 100 kbps?
+2) Throughput is 100 kbps,  2 Mb file takes 20 seconds if R2 = 100 kbps (Slowest Link )
+
+Internet Protocol Layers:
+    We have layers so they can have their own functions, and they can all be separated
+    If you change something in a layer, it won't effect the other layers around it.
+    Internet Protocol Stack(Layers):
+        Application - FTP, SMTP, HTTP (Internet things, chat apps, stuff like that)
+        Transport - Connection between two processes (Defines the Port Number)
+            Ex: Chat client 
+                One persons client connects to another persons client and they can chat and send data between each other
+        Network: (Defines the IP)
+            Host to Host communication (Specifies IP and Port number for application)
+            port number specifies the application. IP is the destination.
+            After the network encapsulates the information, it's called a Datagram
+        Link: Sets your MAC Address into the message, put into a 'Frame'
+            Hops to establish communication
+        Physical: Sending 0's 1's through the actual routers 
+    We have API's for all these different layers.
+    Changes to API's in their layer won't effect any of the other layers.
+    Local Networks only use MAC addresses for forwarding packets.
+    When you got to a router, it checks your IP address because you're entering the network level.
+    So Switches are LAN, Routers are WAN
+    The Message gets broken up into smaller and smaller pieces, if you send small pieces packet loss isn't as detrimental and they're easy to resend.
+
+Network Security:
+    Denial of Service Attack (DoS): Send a lot of requests to a target server, make it too busy so it'll slow down and maybe crash
+    ddos: Several hackers attacking the same target with their own farm of machines.
+    Prevention: 
+        limit requests from specific ip's 
+    packet sniffing: Usually in a LAN,
+        detects outgoing packets, try to analyze what the packet is and potentially resend it, changing mac address or ips so you can receive the sniffed packets response.
+        
