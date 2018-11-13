@@ -1,0 +1,26 @@
+TCP Tahoe, Drops congestion to 1
+TCP Reno, Cuts the ssh threshold to half.
+cwnd - congestion window size 
+
+TCP Congestion Control: 
+    Slow Start: 
+        Cwnd starts at IMSS, cwnd doubles every RTT, if no loss or triple duplicate ACK until reaches the ssthresh. Increases sending speed exponentially.
+    Congestion Avoidance / AIMD Period:
+        Additive increase multiple decrease (AIMD): after the slow start to the threshold, cwnd is eqivalent to ssthresh, and they both increase linearly.
+
+    TCP Tahoe:
+        At Time Out: cwnd resets to IMSS, ssthresh is half of the existing threshold.
+        3 duplicate ACKs: Same as Timeout
+    TCP Reno:
+        At Time Out: cwnd resets to IMSS, threshold cut down to half.
+        3 duplicate ACJs: cwnd and ssthresh to 1/2 
+
+a) Slow start operates at 1-6 and 23-26.
+b) 7 to 22
+c) trip ACK, cut in half.
+d) Timeout, set to 1
+e) 32
+f) 25
+g) 14 = 28/2
+h) ||||/|| Round 7
+i) cwnd = 8 @ 26, After 26 cwnd/2 = 4. thresh@26 = 14, after 26 = 14/2 = 7

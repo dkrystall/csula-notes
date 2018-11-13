@@ -1,0 +1,78 @@
+Multiple Access Links:
+this protocol is set to help avoid collisions 
+broadcast channel 
+    if there's more than one message there will be collisison 
+
+Solution:
+    Multiple Access(MAC) Protocols:
+        If theres only one user that wants to send data, then the whole channels  rate R can be used.
+        If more than one user (M) wants to transmit, then it shares it and the rate becaomse R/M
+        It's decentralized
+        ⭐️Channel Partitioning:
+            If there are 4 computers on one ethernet, and transmission rate is R. Then the whole channel is divided(partitioned) into 4 subchannels.
+        ⭐️Random Access:
+            Each user M randomly uses the entire bandwidth R.
+            If more than one user transmits at the same time there's a collision, and the packets will have to wait
+        ⭐️Taking Turns: 
+            A server is setup that coordinates network traffic. 
+
+    Time Division Multiple Access (TDMA):
+        Time period is divided into separate time slots.
+        Each time slot is called a channel. 
+        each channel gets a turn. 
+    Frequency Division Multiple Access (FDMA):
+        channel spectrum is divided into frequency bands.
+        since they're on different frequencies there shouldn't be any collisions. 
+    Code Division Multiple Access (CDMA):
+        Use different codes to tune your data,
+        should have no collision. 
+
+    Random Access MAC Protocol: Always used for local networks 
+        can't avoid collisions.
+        when collisions happen they can recover:
+            Slotted ALOHA
+            ALOHA
+            CSMA, CSMA/CD, CSMA/CA (CSMA is mostly used for local ethernet networks)
+        
+        Pure (unslotted) ALOHA:
+
+        CSMA Collisions:
+            Whole channel is a broadcast channel shared by everybody
+            Lots of collisions, but can still be successful a lot of the time.
+        CSMA/CD(collision detection):
+            whenever collision happens, the network stops transmitting immediately.
+            Uses NIC to determine who will transmit.
+            
+11/6/18 Linked Layer Communication
+
+MAC Address: 
+    Unique ID, set to your machine. (Unique Local Area Address)
+    Used to setup a LAN address 
+    IEEE regulates MAC Addresses.
+    How Can you find the mac address of a computer?
+        do an ARP table.
+    Each computer has an ARP table
+    these are only used in local networks 
+
+ARP(Address Resolution Protocol):
+    Arp table contains a table with [MAC Address: IP Address]
+    Main purpose of ARP is to convert MAC Address to IP Address 
+    ARP Broadcast:
+        Destination address is all 1's (FF-FF-FF-FF-FF-FF)
+        Only the destination replies with its MAC address.
+        When the source recieves the mac address, then it can save this record in its ARP Table 
+    
+Using ARP to send packets 
+    Gets source ip and mac address, and gets the destination ip 
+    sends it to the router on its subnet.
+    the router converts the mac address and forwards the ip, and converted mac address to the closest matching ip prefix.
+        There may be many routers on the path to the destination
+    the destination router gets the mac address and ip info, and sends it to the mac address that matches the ip.
+    So in the destination, the source mac is set to the router's mac address.
+    
+DHCP:
+    This is how you get your IP Address
+    If local DNS server does not contain the destination address, it will run an ARP query
+        then the gateway router 
+
+DHCP, RIP, DNS, ARP, TCP... many operations involved to get 

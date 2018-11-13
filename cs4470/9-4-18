@@ -1,0 +1,49 @@
+Client-Server Model vs P2P model:
+Client-Server  
+    Server's always running (On a permanent static ip)
+    Client Sends Request
+    Lookup: Google File System
+        Big files split up into chunks
+        Distributed by 'Chunk Servers' 
+        Requests get sent to the Master Server, then the Chunk Servers return the pieces
+        Master server handles metadata
+        Client sets up a connection with the Chunk Server to retrieve files/data
+        When a server goes down another server is brought up and transfers the metadata/
+IoT:
+    For smart home devices and other internet enabled things.
+    Client <-> Server <-> Device
+
+p2p:
+    no server
+    peers have both client and server processes running 
+    self-scalable, when new clients are added new hosts are added.
+    IP's are dynamic 
+
+Chat app hw:
+    All peers are clients and servers.
+
+Sockets:
+    Sends/receives messages on a 'socket'
+    socket: door between processes
+    Socket Requirements: 32bit-IP, Port Number, 
+    Need port because many services may  be running.
+
+TCP vs UDP Sockets:
+    UDP: May experience packet loss, easy to implement, faster communication 
+    TCP: 
+
+    Server Side UDP: Create Socket, on port whatever
+    Socket has a while loop listening for traffic on the port 
+
+    Client: Sends data to the socket on that port number
+
+TCP Architecutre:
+    Has to setup the server first and establish a connection 
+    This is why it's more reliable
+    One socket is listening socket waiting for request, then it can spawn a new socket for direct communication
+    If there are 3 clients using the server, there are 4 sockets/ports open
+
+⭐️Implement Chat app using TCP
+Each user has client/server code. Can accept new requests. Generate a socket to connect. 
+
+

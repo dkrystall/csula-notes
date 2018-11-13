@@ -1,0 +1,14 @@
+given m = 12, p a
+nz = ev
+m is original text, ascii code 12 in this case. 
+e is the number that has no common factors with z.
+
+when given p and q, you need to calculate n and z.
+if p = 5, q = 7.
+then n = 35 = p*q
+z = p -1 * q-1 = 4*6 = 24
+e = z
+cypher text of e = 17
+
+given character a = 53, what is p and q, what is range of e and d? 
+what is a cypher text?

@@ -1,0 +1,151 @@
+Chapters 1 to 3.
+
+Ch 1 wk1-1
+    first page (what's the internet) short answer, calculation, design questions
+    what's the internet, protocol, edge, hosts, access net, physical media, network core: packet circuit switching internet structure, security
+    network protocol page
+    network edge vs network core
+
+ch 1 wk1-2
+    wireless access networks (wireless local vs wireless cellular)
+    physical media page(wirelesss radio, wired copper/fiber)
+    core vs edge network
+    Host: packet ransmission delayy equation.
+    packet-switching 
+    loss and delay page. why is there packet loss and delay?
+    Circuit switching - compare circuit and packet switching (summarize in bulletpoints)
+    packet vs circuit switch example slide.
+    in class practice page for circuit and packet switching ⭐️
+        probability for packet loss 
+Ch2 wk 2- 1
+    queueing delay loss 
+    four sources of packet delay ⭐️(Calculation questions [like homework])
+    calculating end-to-end delay in class questions 
+
+wk2-2
+    throughput ⭐️ 4 slides including in class practice (calculation, if you know throughout how long can you send a file from senderto receiver)
+    5 layers of the internet (aplication, transport, network, link, physical)
+        know which technologies are part of which layer (FTP part of application, TCP part of transport..)
+        transport is between processes, network is between hosts
+    Encapsulation example 
+    Security
+        know how ddos workds (describe)
+        packet sniffing
+        ip spoofing 
+    
+wk 3-1
+    client-server model and p2p model 
+        what are the differences between them
+    skip google file system and iot 
+    p2p architecture page important
+    process communicationg (socket programming)
+    what is a socket?⭐️
+    main identifiers of a socket?
+    UDP Socket interaction ⭐️
+    TCP Socket interaction ⭐️
+        Draw figures from slides.
+    difference between UDP and TCP Sockets
+
+skip all week 3-2
+
+wk 4-1 
+    transport service requirements: common apps ⭐️
+        what are requirements for differnet apps? Some may not require any data loss or time sensitive response
+    comparison between TCP and UDP services ⭐️
+        what is the transport layer protocol that can support web service? TCP
+        Why? TCP can provide reliable comm and requirement for no data loss.
+    Web and HTTP ⭐️ Used for calculation question 
+    Non-persistent vs persistent HTTP (Calculation question)
+        use in class practice problem 
+    what is RTT?
+    NO PARLLEL CONNECTIONS 
+    in class practice problem focus on non-persistent HTTP without paralle (questions A and C) on the bottom of the page.
+
+wk 5-1
+    HTTP request message (will give snapshot of http message, tell things about it. Is it req or res? ) differnet key information.
+    method types
+    based on response, is it sucessful, bad request, not found?
+    What are cookies? Where are they stored? how do they work? What servces do they provide?
+        they help http keep state
+    Web Caching? What are benefits? how do they work?
+        caching example is important 
+        know how to calculat average delay. give hit rate, whats the average delay?
+        Check example 
+    FTP protocol ⭐️
+        which port number is FTP on?⭐️
+        uses 2 ports: 21 and 20
+            why are there 2 porst?
+                separate control channel with data communication channel
+wk 5-2
+    Email protocol⭐️
+        what are main components of emails? How do they work?
+        Given SencarioL Alice sends message to Bob slide
+            What are the main activity in tehse steps?
+    DNS⭐️
+        what services does DNS provide? Why is centralized DNS not scalable?
+        What is the architecture for DNS in the real world.
+            Distributed Hierarchical structure
+                root level DNS, TOP level DNs, authorative DNS...
+        What is local dns?⭐️
+        recursive query and iterative query ⭐️
+            what are differences and improvements of iterative vs recursive.
+            Draw the figures   
+    Know DDOS ⭐️
+    p2p applications
+        know how p2p file distrubutions work (bittorrent) ⭐️
+        all bit torrent pages important ⭐️
+    skip everything after bit torrent, 
+        how does p2p file downloading work?
+wk 6-1
+    Transport Layers 
+        What is transport layer communication  
+            logic communication between processes.
+        what is multiplexing, demultiple7-1ing⭐️
+            how do they work?
+            Uses port numbers to differentiate data from different processes.
+        Differences between UDP and TCP ⭐️
+        UDP
+            what kind of appds can UDp support?
+            know features of UDP 
+            Benefits of UDP ⭐️
+                faster, smaller header size, no setup process
+        Reliable data connections
+            rdt2.0 Finite state machines (Don't have to understand )
+            If there are bit errors, how do we recover? Acknowledgment systems(ACK, NAK))
+            in rdt 2.0 wat is the new advancement? 
+                introduces feedback to recover from bit errors.
+
+wk 6-2
+    rdt 3.0 how to recover from packet loss
+        adds a timer.
+        skip FSM(finite state machine)
+wk 7-1
+    rdt 3.0 isn't perfect. why?
+        it's low efficiency. we send a packet and wait for a reply, so it's slow.
+        U = (L/R) / RTT+ L /R
+        How do we improtve it?
+            pipeline technology. How does it work?
+        How does selective repeat work?
+        Go-Back⭐️
+        All pages up to selective repeat 
+        Compare GO-Back and Selective Repeat ⭐️
+        How to establish a connection 
+            describe 3 way handhsake.
+        Hwo to close a connection>
+            What is the sequence, steps...
+    TCP Overview ⭐️
+        (skip segment strcture, but it's important)
+        Sequence NUmbers, Acknowledgment numbers.
+wk 7-2
+    What is flow control? How does it work? first 2 pages.
+    Congestion control, what are the reasons for congestion? What are issues that cause them?
+    Know TCP Congestion Control Protocols
+    Slow Start, Fast Retransmission, Triple Duplicate Acknowledgment
+    Differences betwene Reno and Tahoe⭐️
+    Summar and in class practice ⭐️
+    similar questions to the Graph 
+
+Redo all homework
+Redo all inclass practice
+
+After this, check the slides and understand everything. This is to answer short-answers.

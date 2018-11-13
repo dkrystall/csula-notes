@@ -1,0 +1,61 @@
+1) 10 Mbps = 10000000 bits/second single switch, packet size = 5000 bits = 5 Kb, 
+Propagation delay = 10 microseconds = 10x10^-6 seconds, immediate retransmission
+Start -> Switch(Ethernet) -> End 
+
+    a) 5 kbits / 10000kbps = .00005 seconds = 500 microseconds
+        this is then multiplied by 2 because the switch needs to retrieve all the data before retransmitting
+        transmission + Propagation delay = 500*2 + 10 = 1010 microseconds
+        Total Transmission time = 1010 microseconds = 1.01 ms 
+
+    b) Transmission speed + Propagation delay of 3x switches 
+        Start -> Switch 1 -> Switch 2 -> Switch 3 -> Destination
+        1000 + 10 + 1000 + 10 + 1000 + 10 + 1000 = 4030 microseconds = 4.03 ms 
+    
+
+    c) cut through - doesn't have to store all the data first:
+        (.2 kbits / 10000 kbps) + 10µs prop delay+ (4.8kbits / 10000kbps) = 20 + 10 + 480
+        Total time = 510 microseconds = .51 ms
+
+
+        40,000 Km = 40,000,000 m 
+2) Host A <--------->B (40,000 km away)
+Propagation Speed = 2.5 * 10^8 meters/seconds, Transmission Rate R = 5 Mbps.
+
+    a) How long to move a packet of 1000 bytes from A to B 
+        Packet = 1 KB = 8 KBits
+        R = 5000 Kbps 
+        No processing/queue Delay 
+
+        Prop Delay = 40,000,000 meters /  250000000 meters / second   = .16 Seconds = 160 ms
+        Transmission Time = 8 Kbits / 5000 Kbps = .0016 seconds = 1.6 ms 
+        Propagation Delay + Transmission Time = .16s + .0016s = 161.6 ms
+        Total Time = 161.6 ms 
+
+    b) How Long does it take to move packet 'L' over distnace 'd', propspeed 's' and trans rate 'R'
+        typical time = L/R + d/s 
+
+    c) Trans time = dtrans, prop delay = dprop, Host A transmits at time t=0, at time t=dtrans, where is the last bit of the packet?
+        If there's no queue delay, the last bit will be just entering the Propagation pipe, D = 0m
+        let D = Total Propagation Distance
+        Last bit is at:  D - (D / (dprop - dtrans)
+        first bit = 1 bit / 5Mbps = .0000002 = 0.2 microseconds 
+        25000000m/s * 
+
+    
+    d) dprop > dtrans, at t=dtrans, where's the first bit?
+        first bit = 1 bit / 5Mbps = .0000002 = 0.2 microseconds
+        250000000 m/s * .0000002 = 50m
+
+    e) dprop < dtrans, at t = dtrans, where is the fist bit?
+        The first bit is at the start of the Propagation Link, D = 0
+    
+    f) Bandwidth Delay R*dprop 
+        R * LinkDistance/propspeed
+        if R = 5 Mbps, D = 40,000 Km, propSpeed = 2.5*10^8m/s 
+        5000000 * 40000000 / 250000000 = 800,000 bits 
+
+    g) packet size = 1,200,000bits = 1.2 Mbits  
+    If there's 1 bit every 50 meters, and the line is 40,000 km 
+    The maximum number of bits that can be held is 800,000 bits.
+
+    h) 50 meters

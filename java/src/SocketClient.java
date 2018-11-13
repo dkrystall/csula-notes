@@ -2,11 +2,8 @@ import java.io.*;
 import java.net.*;
 
 /**
- * javaRefreshse
- * Created by davidkrystall on 2/21/18.
- * <p>
- * <p>
- * (c) ontometrics 2015, All Rights Reserved
+ * SocketClient
+ * Created by davidkrystall on 9/28/18.
  */
 
 public class SocketClient {

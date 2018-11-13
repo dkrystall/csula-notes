@@ -1,0 +1,43 @@
+cost function, measures how far off data is from the function 
+
+1/2m summation (htheta(x^1)-y^i)
+to find minimums of a function you take the derivative.
+gradient descent 
+when changing your learning rate, assign them to a temp verial=ble first
+when the leraning rate's too large, it'll start skipping the minimum 
+
+batch gradient descent
+
+scatastic gradientdescent - upgrades after every training example 
+
+convex function 
+
+batch gradient descent
+    EACH STEP USES ALL THE trianing examples.
+
+Logistic Regression Classification 
+
+    sigmoid / logistic function 
+    Sigma - greek for s 
+    sigmoid - s like 
+    data doesn't effect your graph 
+    you get the sigmoid by...
+    
+Advanced Optimizations 
+    One-vs-All 
+    pick the class with the highest probability.
+
+Overfitting - 
+    Have to find a sweet spot between overfitting and underfitting.
+    make high exponent terms more expensive by multiplying them by large numbers 
+    L2 - Squared
+    L1 - absolute value
+    or lambda, waits 
+    underfitting make lambda smaller 
+    overfitting make lambda bigger.  
+
+    andrew ng machine learning 
+
+    use yolo v3 with tensorflow, that's the ormat the raccoon thing had 
+    lookup TFRecords from videos. 
+    Sloth - image labelling. 

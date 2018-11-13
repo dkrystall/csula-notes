@@ -1,0 +1,12 @@
+Fvec = QEvec = (kq1q2/r^2)ȓ
+W(electric) = F*Δx => PE -> PE in Volts
+1 Volt = 1J/1C = J/C 
+big G = 6.67 x 10^-12 Nm²/kg²
+Ḟ = m(GM/r²)ȓ
+lim x-> 0 Δx = dx 
+
+W(total) lim x-> 0 ∑ḞΔx = ∫Ḟdx
+
+∑ḞΔx = ∫Ḟdx = ∫mGM/x² = GmM ∫dx/x² = -1/x|a to b = [-(1/x₀ - 1/x₁)] 
+
+potenential is 1/r 

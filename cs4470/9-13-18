@@ -1,0 +1,72 @@
+going to use wireshark for first lab
+requests: GET, POST, DELETE, PUT
+
+HTTP Response:
+    contains information and data.
+    important info: 'Last-Modified'
+    Response Codes:
+        200, 301 - Moved, 400 - Bad Req, 404 - Not Found, 505 - HTTP Version not supported.
+    
+Persistent HTTP: Keeps a connection open to send data
+HTTP is stateless:
+    No history is stored.
+Cookies can save state.
+    Users store their cookies.
+    Servers check cookie files and check for which state they're at.
+    Used for Auth, carts, recommendations, 
+Web Caches
+    objects in chache are returned.
+    After you get something from the internet it gets stored in a cache.
+    The server finds the most actively used resources and puts them in the cache.
+    Client <-> Proxy Server (Cache) <-> Origin Server 
+    Cache has to make sure it's updated before returning data to client 
+
+Speed: CPU -> Cache -> Mem 
+CPU takes ~5ms to access data in main mem.
+CPU takes ~1ms to access cache 
+CPU gets hits 60% of time from cache, 40% it goes to main mem 
+Speed/time = .6 * 1ms + .4(5ms)
+
+avg object size = 100K bits
+avg req rate from browsers to origin servers = 15req/sec. Total data rate = 1500Kbps 
+
+Access Link = 1540 Kbps, This bottlenecks the entire system. 
+
+Origin Server -> Access Link -> Institutional Network(1Gbps LAN) -> Clients 
+
+Eiether increase the access link speed, or added more internet caches so clients can access new data.
+
+If cache hit rate is .4, 40% of requests are stored in Localized Cache, 
+60% of requests have to go through access point to server.
+ 
+Acess Link utilization: 60% of traffic goes through the access Link
+
+Utilization = Actual Transmission / Capacity = (0.6*1.54)/1.54 = .9/1.54 = 58%
+
+Total Delay = .6*(Delay from origin Server) + .4(Delay when satisfied at cache)
+            = .6(2.01) + .4(~ms)  
+            = ~1.2 seconds (Less than with 154 Mbps link, and cheaper.)
+
+FTP
+    Main Feature: Can work on two different Ports.
+    Controlled connections work on port 21.
+        Auth is over this connection 
+    Data connections are on port 20.
+
+Three major components of e-mail - User Agents, Mail Server, Simple Mail Transfer Protocol
+    User Agents - Generating Messages
+    Mail Servers- ability to send/retrieve messages.
+        Has queues of messages
+    SMTP - Message retrieved from user, then gets sent to recipients mail server, then sent to receiver.
+    Messages get saved until the message receiver logs in. Then it fetches.
+    SMTP Uses TCP usually.
+
+DNS - Domain Name Service
+    Translates host names to IPs.
+    It's a 'Distributed database' that translates names to addresses.
+    Challenge of DNS is scalability.
+    Having a centralized server doesn't work.
+    Soution: Distributed databases, Multiple DNS servers, shares a small portion of information. So all the maps are on different machines.
+    different servers for different domain suffixes.
+    Real Solution: Hierarchical Distributed Service.
+

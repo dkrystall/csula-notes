@@ -1,0 +1,11 @@
+Chat app:
+    Command line takes in an argument for the port number.
+    'help' command, displays commands for the app and what they do
+    port should be higher than 1000
+    connect command: connect <ip> <port>
+    listening port and connection ports are different.
+    ipv4 
+    convert ip address using aton() or pton(), 'address to network' 'ip to network'
+    or 'host to network'
+    close then shutdown the socket in Terminate.
+    

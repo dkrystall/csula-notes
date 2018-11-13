@@ -6,11 +6,8 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 /**
- * javaRefreshse
- * Created by davidkrystall on 2/21/18.
- * <p>
- * <p>
- * (c) ontometrics 2015, All Rights Reserved
+ * SocketServer
+ * Created by davidkrystall on 9/28/18.
  */
 public class SocketServer {
 
