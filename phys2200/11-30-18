@@ -1,0 +1,24 @@
+Direction of enduced EMF 
+    Sign of phi is positive with increasing B Field 
+    Counter Clockwise is positive 
+
+EMF of Positive dPhi/dt is negative 
+
+Is enduced emf clockwise or counter clockwise?
+Clockwise.
+
+decreasing, induced emf goes clockwise if its into the page.
+
+eddy currents make loops/circles. 
+
+cross products are about circulation 
+
+Mutual Inductance
+steel acts like a lense in a coil.
+self-inductance:
+    circuit with a coil that carrys variable current: self-induced emf 
+    magnetic energy density = (Magnetic Field Magnitude)^2 / 2(magnetic constant)    u = B^2 / 2μ₀
+    Vab = ldidt 
+
+positive lobe of square wave decays in rl circuit.
+inductor causes voltage to become negative.

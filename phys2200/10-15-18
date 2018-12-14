@@ -14,3 +14,7 @@ R = 1.75/1.67 = 1.0479 * 50
 R = pL / A    A = cross sectional area 
 
 EMF = J/C 
+
+if a batt is 12V, it's the emf ( script E)
+voltage drop around circuit must match source voltage.
+V = E - Ir (emf - Ir)

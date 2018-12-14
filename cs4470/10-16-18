@@ -1,0 +1,30 @@
+Dijsktra's Algorithm
+    initialization: N' = {u}
+    for all nodes v 
+        if v adj to u
+            then D(v) = c(u,v)
+        else D(v) = Inf 
+
+
+Runs Big O n^2 
+
+Distance vector Algorithm
+Bellman-Ford Eq (Dynamic Programming)
+
+Second Round 
+let dx(y) = cost of least-cost path from x -> y
+then dx(y) = min{c(x,y) + dv(y)}
+    min = min taken over all neighbors v of x
+    c(x,v) = cost to neighbor v 
+    dv(y) = cost from neighbor v to destination y
+
+D(x,y)  = D(x,y) + D(y,y) = 2 
+D(X,z) = D(x,z) + D(z,y) = 5
+then x becomes aware the w exists
+D(x,w) = D(x,y) + D(y,w) = 3
+       = D(x,z) + D(z,w) = 2
+
+Then need a third round because our vectors updated again
+
+BY the fourth iteration everything will be stable.
+Vector for x in fourth interation will be the final answer for hw prob 2

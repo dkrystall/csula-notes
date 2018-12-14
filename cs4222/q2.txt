@@ -1,0 +1,33 @@
+1)
+SELECT name
+FROM(
+SELECT s.name, s.age, e.cid
+FROM students s JOIN enrollment e
+ON s.id=e.sid
+GROUP BY e.cid, s.name, s.age 
+)AS students
+
+2)
+Select s.name From Students  S
+Where s.id NOT IN (Select e.sid From  enrollment e)
+
+3)
+SELECT s.name, COUNT(*)
+FROM students s JOIN enrollment e
+ON s.id = e.sid
+GROUP BY s.name, s.id
+HAVING COUNT(*)>2
+
+4)
+SELECT c.name, COUNT(*)
+FROM classes c JOIN enrollment e
+ON c.id = e.cid
+GROUP BY c.name
+HAVING COUNT(*)<2
+
+5)
+SELECT f.name, COUNT(*) 
+FROM faculty f JOIN classes c
+ON f.id = c.fid
+GROUP BY f.name
+HAVING COUNT(*) >=2

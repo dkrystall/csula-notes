@@ -1,0 +1,15 @@
+srvivability - how well a service can handle failing
+99.999% uptime is 5 mins down a year
+working path and backup paths should be disjoint (completely disjoint)
+types of disjoints
+    path-based protection (totally disjoint)
+    link-based protection 
+        each node will have a backup path, that reconnects with the original path.
+    working/backup paths 
+    shared-backup
+    dedicated backup - each user is assigned a backup path
+    shared backup - each user shares a bucket of paths.
+
+find disjoint working and backup paths
+    run dijkras alg, then remove the active path and rerun the alg to get backup
+     

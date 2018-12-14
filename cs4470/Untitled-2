@@ -1,0 +1,64 @@
+Final Review (Closed book, next tuesday.)
+Linked Layer, Networked Layer, Security.
+
+⭐️RIP Example.
+
+Skip chapter 4 after RIP 
+
+Two Routing alg questions. Space, Distance vector
+How to assign IP address. 
+
+⭐️Definition of Linked Layer
+
+single bit parity, 2d parity checking 
+⭐️ CRC Check, Given generator, data, how many bits are in redunancy. "practice 1 chapter 5 slide
+leading bits are based on redunancy.
+
+Multiple Access Control Protocol. 
+    Skip TDMA
+Pure Aloha
+Slotted ALoha 
+⭐️CSMA, how does it work? (sense channel, if free, send data.)
+    Why can collisions still happen with CSMA?
+    This is the reason for CSMA with Collision Detection (CSMA/CD)
+⭐️5 stesp for ethernet CSMA/CD ALgorithm
+        SKIP EFFICIENCY 
+difference between MAC and IP 
+12.1 
+⭐️ ARP: Why do wee ned it? How does it work?
+⭐️Addressing Routing to another LAN Exampel
+    Change source and destination MAC address. Why do we need to chang ethe MAC address, and how?
+
+skip ethernet.
+
+A day in the life.. connecting to the internet EXAMPLE.
+
+12.2 
+How does the ethernet switch work? FOrwarding table... how to construct the table? Self learning Protocol
+⭐️Difference between switch and router 
+⭐️VLAN. What are benefits of vlan? 
+⭐️Vlan Trunk tunnel 
+
+Ch 8 - Security 
+skip to Cryptography slide.
+⭐️Difference between private key and symmetric key.
+⭐️Symmetric Key page
+How do the public and private keys work? 
+⭐️RSA Algorithm 5 steps. One calculation question
+    Given tags, and range of n, p , q. do the encryption.
+    don't have to know why it works.
+
+⭐️In Class Practice, pg 2 of second ch 8 slide.
+    instead of d, it will be something else.
+
+How to certify users. Why do we need auth?
+⭐️How can we get digital signatures? First we use Hash to convert the message into a fix sizded hash value, then use the private key to encrypt the hash value to get the digital signature.
+
+⭐️How to secure e-mail. Given the figure , how does Alice encrypt the data? 4 steps to encrypt data.
+Given this encryption, how can bob decrypt the data? Lower half answer.
+    Use false public keys, combined with other things to send over the internet.
+    When bob receives the message, he uses his own key to get the symentric key, then he can decrypt all of alice's message. 
+    He can verify the message is from her by using the hash function to decrypt the message, and using alice's public key to decrpyt her part.
+
+
+

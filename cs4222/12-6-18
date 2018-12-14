@@ -1,0 +1,101 @@
+Relational Algerbra 
+    Unary Relational Operations
+        Select 𝛔, project π, rename ⍴
+            SELECT x FROM <table> WHERE <condition>
+    Unary Algebra Operations (From set theory)
+        Union, Intersection, Difference (minus)
+        cartesian product
+    Binary Relational Operations   
+        JOIN, DIVISION
+    Additional relational Operations   
+        OUTER JOINS, OUTER UNION, AGGREGATE FUNCTIONS[computational ops:(SUM, COUNT, AVG, MIN, MAX)]
+
+
+Calculus
+
+Functional
+
+
+SQL
+    SELECT MIN(age)
+    FROM students
+    WHERE condition; 
+
+    SELECT sub.*
+    FROM (
+        SELECT * FROM 
+    )
+
+    select student where the student id 
+    SELECT students.age FROM students 
+
+    SELECT s.name, COUNT(*)
+    FROM students s JOIN enrollment e
+    ON s.id = e.sid 
+	GROUP BY s.name
+    HAVING COUNT(*)>=2;
+
+    SELECT c.room
+    FROM enrollment e JOIN classes c
+    ON e.cid = c.id 
+	GROUP BY c.room
+    HAVING COUNT(*)>=2;
+
+
+    SELECT f.name
+    FROM faculty f JOIN classes c
+    ON f.id = c.fid
+
+
+
+Functions 
+
+Triggers
+
+Functional Dependencies
+
+Normalization
+
+Multivalued Dependencis
+    
+
+    FINAL
+
+    SELECT name
+    FROM(
+	SELECT s.name, s.age, e.cid
+	FROM students s JOIN enrollment e
+	ON s.id=e.sid
+	GROUP BY e.cid, s.name, s.age 
+	)AS students
+
+
+2)
+Select s.name From Students  S
+Where s.id NOT IN (Select e.sid From  enrollment e)
+
+
+
+
+☑
+3)
+SELECT s.name, COUNT(*)
+FROM students s JOIN enrollment e
+ON s.id = e.sid
+GROUP BY s.name, s.id
+HAVING COUNT(*)>2
+
+4)
+SELECT c.name, COUNT(*)
+FROM classes c JOIN enrollment e
+ON c.id = e.cid
+GROUP BY c.name
+HAVING COUNT(*)<2
+
+
+5)
+SELECT f.name, COUNT(*) 
+FROM faculty f JOIN classes c
+ON f.id = c.fid
+GROUP BY f.name
+HAVING COUNT(*) >=2

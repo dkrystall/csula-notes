@@ -1,0 +1,45 @@
+120/240 volt split phase wiring supply
+L1+N = 120v
+L2+N = 120
+L1+L2 = 240 
+
+/* not on exam
+What do you buy from the power company?
+    converted from the mechanical to electrical energy and storing it 
+
+output of tranasformers are dependent on frequency of the lines 
+    if it varies too much devices burn out 
+*/
+
+ch 25,26
+
+exam next wednesday 
+
+t1 = RC*.6931
+
+tau = RC (Resistance * Capacitance)
+
+C = 0.971 uF 
+R = 1700 Ohms 
+.64*10*2^-3
+time per box = 2 ms / box 
+t1 = 1650.7 
+
+1.14*10^-3
+
+2*
+
+capacitor in series = derivative
+in parallel = integration 
+
+incandessent bulbs aren't good at converting heat to light
+flourescent lights are good at converting heat to light 
+led lights are the best at converting heat to light 
+
+Power = I^2 R
+
+Power = VI 
+
+120W = 120V I 
+
+V^2 / P  = R 
