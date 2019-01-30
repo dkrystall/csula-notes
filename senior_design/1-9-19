@@ -1,0 +1,107 @@
+Data Management for Neural Nets 
+
+// batch_size - powers of 2.
+
+Train / Test / Develop
+  80%   20%            //Regular distribution for training 
+  60%   20%     20%    //This percentage takes the case of changing hyper parameters to get better sets 
+
+if training accuracy high, and test fitting is lower, you're probably overfitting. 
+if training accuracy low, and test fitting is low, you're probably underfitting. 
+
+Andrew says for "big data", if you have millions of records, you boost Training Data %
+As Diverse a source as you can get.
+labels have to be very exact (border boxes) 
+
+overfitting/high-variance : when you have your model match your data exactly 
+underfitting/high-bias : doesn't take your data into account at all
+    -getting more data doesn't help bias
+
+for object detection: intersection / union 
+
+to fix overfitting, use regularization
+    one solution is to add more data (if you don't have much probably)
+    other: Drop Out 
+    Deeper your net, more likely it will be to overfit.
+    So maybe remove some complexity of model.
+    Use more pooling.
+
+Basic Recipe for Machine Learning - 
+    -shoot for high training accuracy first.
+    -if overfitting, use regularization.
+
+Batch vs Mini-batch gradient descent 
+    Update all the parameters at the same time.
+    Could update all parameters after each training example.
+
+    Stochastic Gradient Descent 
+    1 training example-update all parameters. 
+
+    Batch: Entire batch for each parameter update 
+    Store examples in an accumulator before updating weights.
+
+    mini-batch: divide the data into mini batches, then update the parameters(weights), after each batch. 
+
+    epoch: 1 pass through all training data. 
+
+    Each epoch has multiple batches.
+    Each iteration of GD involves updating parameters(weights) after each minibatch is done.
+
+    Batch Gradeint Descent - 
+        cost vs iterations : smooth declining exponential function 
+
+    Mini-Batch GD -
+        cost vs iterations: jagged declining exponential func.
+        make sure mini-batch fits in gpu memory 
+
+Tensorflow - 
+    python - construts the graph of operations you want to run 
+    each piece of data is a 'tensor', that will flow through other tensors (which could be operations)
+    then it creates a session that runs in cpp and runs the graph you designed, then returns your values 
+
+    Z = logits 
+
+
+//CNNs
+relu puts all values between 1-0, if it's not the last operation you can still get negatives
+
+Use (Z) values to calculate Cost function 
+
+Yolo - 
+
+classification - 
+    classifier - identifies wether something is or isn't a class of something.
+
+Classification with localization
+    classification with a bounding box around it.
+
+Detection - 
+    Have multiple objects, and find all of the objects that match the classification. 
+
+Image Grid - Top Left = (0,0)
+             bottom right = (0,0)
+
+    
+    Let's say you're looking for pedestrians, motorcycles, car, background; Yolo can put all of these into one model, so you don't need multiple classfiers 
+    use log loss for each classifier,
+    Don't have to use sliding windows with cnn's, because as the filter slides it retains all the image information in its quadrant.
+     
+    You draw bounding boxes, and it's then broken up into grids, a typical grid size is 19, 
+
+Intersection over Union, Takes your bounding boxes and your results, and says how much % of the image is in there
+    if IOU >= .5, could say it's correct.
+
+Anchor Boxes - Determined by the IOU value, 
+            Must provide at least 1 anchor value in the training set, 
+            There is already a tool to generate anchor boxes based on provided bounding boxes in the training set,
+
+Non-Max Suppression
+    When your classfier returns multiple bounding boxes for the same item, so they over lap, you use non-Max
+    Find the boxes with the highest Pc, then delete all the boxes that overlap. 
+    Maybe remove the one's with Pc ratings less than .5,
+
+After Yolo Runs, you get a list of [(Pc, Bx, Bz, Bh, Bw, Class),...]
+
+Have to make it work,
+Convert bumblebee labels to run with darknet,
+Install tensorflow on the lab computer,

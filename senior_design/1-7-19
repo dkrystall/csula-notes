@@ -1,0 +1,170 @@
+1-7-19
+
+need 1000 labelled images
+can apply differnet filters to raw images to make new ones (noise, colors...)
+auxillary methods to get yolo working..
+
+-------
+you want to open 3 pizza places, where to put them given maps?
+
+unsupervised - you have data, and try to find patterns.
+    k-means: given number of kernels (3 in pizza example)
+
+--------
+Training set of houses
+    for each house, you have the num of bedrooms and the price 
+
+supervised - you want to learn a model from labeled training data, that takes in features of that data and predicts an independent var from it.
+    Features - Dependent Variables
+
+    For house example, make a model so that given the feature, you predict the price
+    this example is linear, ŷ=wx+b
+    when you first get data, you don't know 'w' or 'b'
+    to get the minimum of the model, you take the derivative of 'w'
+    J(w,b)(1/N)Σ(y-ŷ)² {from i=1 to N}   (This func is in terms of w,b)
+        w is the slop, b is the y-int, have to adjust this line until you get the least error in your data
+    The higher this result is, the more error there is. (minimization)
+
+    Types of Supervised Learning 
+    Regression -
+        'y' = continuous
+        yolo has some aspects of regression to find the coordinates of where the object is
+
+    Classification -
+        'y' = discrete categories
+        example, predict wether there is a cat, a dog, or nothing 
+
+Deep Learning (don't use loops, use matrix math)
+    0 = b
+    w = <W0, W1, W2, .. to however many features with weight>
+    h(ŵ) = w0x0 + w1x1 + w2x2 + .... (Linear Regression)
+
+    Use dot products to calculate convolutions
+
+    Reasons for Deep Learning:
+        Nerural nets keep going up in performance with the more data it gets.
+        Traiditonal ones do not
+    Forward Propagation:
+        the end result after all the hidden layers 
+    
+    Binary Classification:
+        Given an image, 
+        y without hat, is "ground truth" because it was labelled by a credible source
+        y hat is predicted value(truth)
+        
+        Notation:
+            Training Example (<x>,<y>) x ϵ Real (n features of x), y ϵ {0,1}  //0 for true, 1 for false
+            Training Examples: M { (x^(1),y^(1)), (x^(2),y^(2)), .... }  //Superscripted value is the training example number
+                               Mtrain and Mtest examples, must test against data that hasn't been used for training.
+            represent all of the data:
+                X = [<x^(1)>,<x^(2)>,...,<x^(n)>]   X.Shape =(nx, m) //number of features x, times m sized matrix.
+                Xᵗ=
+                Y = <y^(1), y^(2), ..., y^(m)>  Y.shape = (1,m)
+                eventually you get your matrices and dot them to find your ŷ value, and after the first step the rest is vectorized.
+    
+    Logisitc Regression:  Predicting Categories (if something's a cat or not)
+        Given Vector x,
+        want ŷ = P(y=1 | x)   //prediction
+        Parameters: w = <real number with length = n>, b = y-intercept
+        Output: ŷ = wᵗ·x + b  //b = bias node
+
+        Linear functions are not good with large ranges for binary cases.
+        sigmoid (logistic) looks like x³
+            σ(h) = 1/1+e^(-h)
+
+        plug ŷ = wᵗ·x + b  into Z as a neural net.
+        ŷ = σ(wᵗx+b)
+        given{(x^(1),y^(1),....)}, ŷ^(i) ≈ y^(i)
+
+    Loss Function (cost)
+        ℒ(ŷ,y) = -y log ŷ + (1 - y) log(1-ŷ)
+        penalizes us for predicting the wrong answer,
+        weights go into ŷ, 
+    
+    Gradient Descent:
+        Finds the slope, goes in the direction that's opposite the slope
+        Run this loop until the accumulator is done with all training examples, then weights are updated.
+        works best on 'convex' functions (no local minimums) 
+
+        Learning Rate Decay* 
+
+    Logisitc Regression on m examples
+        J(w,b) = 1/m Σℒ(a^(i),y) 
+        δ/2wi J(w,b) = 1/m Σδ/2wiℒ(a^(i),y^(i)) 
+        Algorithm:
+            Init J=0, dw1=0, dw2=0, db=0
+        
+            for i=1 ... m :  //loop 1
+                z^(i) = wᵗ·x^(i) + b 
+                a^(i) = σ(z^(i))            //keep track of cost, every time gradient descent is being run, the cost should go down. 
+                J += ℒ(ŷ^(i),y^(i)) //print every 100 times or so  also, J should be decreasing 
+                dz^(i) = a^(i)z^(i)
+                dw1 += x1^(i)dz^(i)
+                dw2 += x2^(i)dz^(i)
+    
+    //yolo uses one model to detect all objects
+
+    vectorization - getting rid of loops 
+    numpy 
+    instead of looping through each parameter with its weight, you can put all your data through the weight
+
+    input layer = initial features 
+
+    Input Layer -> Hidden Layer 
+    Describe layers as L^[1]
+    The hidden layer has a bunch of activation nodes, that get calculated to 'z' values.
+
+    Loop Version-
+    the 'W' is the weight matrix, which is after the input layer is calculated with the hidden layer 
+    THis W is then passed to the next layer and recalulated,
+    After you get W's, you dot product them with your input layer, and get a Z vecotr 
+    the Z vector is then passed into the sigmoid func and you get an A vector 
+
+    Numpy'd Matrix Cool Version - 
+    You can then run your W1 result and dot that with your training examples,
+    Then you have each Z value 
+    which you then can run the sigmoid func on the whole matrix, and get your 'A' matrix
+
+    After you get your y hat values, you back Propagate and adjust weights until you match your truth 
+
+    Activation Functions -
+        Sigmoid -  
+        tanh - tanh(z) = e^z - e^(-z)  /  e^z + e^(-z)  //large Z's slow this down 
+        RELU - r(z) = max(0,z)  //Rectified Linear Units, speeds up gradient descent 
+        Leake RelU //
+    
+    parameter - weights in the matricies
+
+    Hyper Parameters - 
+        Iterative: idea -> code -> experiemtn -> idea 
+        α, the Learning Rate : Hardest one to figure out.
+        How many weights     
+        Which Activation Function to use?
+    
+    convolutional neural nets - 
+        keep 2D info,
+        Fully Connected layers are expensive
+        so, don't completely unwravel images.  //will probably scale them down to 512. 
+        Stride - How many pixels your filter slides 
+        can have as many filters as you like 
+        n = origi size, p = padding, F = Filter Size, S= Stride 
+        Next convlution result size = (n+2p-F) / (s+1)
+        Convolutions are somtimes put through Relu, which gets rid of all the negatives.
+        THe layers / channels are flattened when ran through the convolution filters. 
+        Max Pooling Filter - Get the largest item in the grid 
+
+        The end y value is called 'one-hot encoding'
+        the activation filter for most neural nets is 'softmax'
+
+        softmax:
+            sm(z) = e^(z) / Σ(ti)  
+            t=e^(zi) 
+
+        Loss Function (how far your truth is off.) - 
+            ℒ(ŷ,y) = -Σ( yj logŷj) from j=1 to n.
+            //want this value to be small.
+
+    This Neural Net would only let us do recognition. (won't draw a box, will tell you if it's in the image though)
+
+1-9-19
+

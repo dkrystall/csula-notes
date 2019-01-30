@@ -3,7 +3,7 @@ cost function, measures how far off data is from the function
 1/2m summation (htheta(x^1)-y^i)
 to find minimums of a function you take the derivative.
 gradient descent 
-when changing your learning rate, assign them to a temp verial=ble first
+when changing your learning rate, assign them to a temp verialble first
 when the leraning rate's too large, it'll start skipping the minimum 
 
 batch gradient descent
