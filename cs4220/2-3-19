@@ -1,0 +1,30 @@
+Arrays:
+    const alpha = ['a','b','c']
+    alpha[0] // returns 'a' 
+    alpha.length // returns 3
+
+    Array methods:
+        push() //puts value at the end 
+        pop() //returns the value of the last element of the array and removes it
+        unshift() //
+
+        foreach() 
+        alpha.foreach(word =>{
+            console.log(word)
+        })
+
+    
+    Objects in JS
+
+    const transformer = {
+        name: 'Optimus Prime',
+        team: 'Autobots',
+        colors: ['red','blue','silver']
+    }
+    transformer.homeWorld = 'Cybertron'
+
+    Object.keys(transformer) //returns key attribute names of Object
+    Object.values(transformer) //returns an array of values in object.
+    Object.assign(transformer) 
+
+    
