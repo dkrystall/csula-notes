@@ -48,8 +48,8 @@ const todos = [{
 
 const checkPriority = ({ name , priority }, callback) => {
     setTimeout(() => {
-        const error = (priority == null) ? `Missing Priority [ '${name}' ]` : {name, priority}
-        callback(error, {name, priority})
+        const value = (priority == null) ? `Missing Priority [ '${name}' ]` : {name, priority}
+        callback(value)
     }, 90)
 }
 
@@ -77,24 +77,26 @@ const checkPriority = ({ name , priority }, callback) => {
 
 
 
-async function makePriorityList(todos) {
-    let returnTodos = {}
-    let errors = {}
-   
+function makePriorityList(todos) {
+    let returnTodos = []
+    let errors = []
+    try{
         todos.forEach((todo) => {
-            const thistodo = checkPriority(todo, (error, result) => {
-                console.log(error)
-                if(error){ 
-                   //console.log(result )
-                    return error
+            const thistodo = checkPriority(todo, (result) => {
+                if(result.priority != null){ 
+                    returnTodos.push(result)
                 }
                 else{
-                    return result
+                    errors.push(result)
                 }
             })
-        })
-    console.log(returnTodos)
-    console.log(errors)
+            
+        console.log(returnTodos)
+        }
+        )
+    }catch(err){
+        console.log(err)
+    }
 }
 
 makePriorityList(todos)
