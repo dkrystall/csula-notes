@@ -7,10 +7,10 @@ const planets = [ 'venus', 'earth', 'mars']
 // // when using methods push() or pop() the keyword const can still be used
 // // push
  planets.push('jupitar', 'saturn', 'uranus', 'neptune', 'pluto')
- //console.log(planets)
+//  console.log(planets)
 
 // // pop & accessing
-//const accesslast = planets[planets.length - 1]
+// const accesslast = planets[planets.length - 1]
 // console.log(accesslast)
 // console.log(planets)
 // const last = planets.pop()  // this mutates the array

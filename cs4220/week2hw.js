@@ -5,11 +5,11 @@
  */
 const log = console.log
 const replaceLetters = (str, arr) => {
-    let word = str
+    const word = str
     let returnString = ""
     for(letter in word){
         let erase = false
-        let thisLetter = word.charAt(letter)
+        const thisLetter = word.charAt(letter)
         arr.forEach( letter => {
             if (thisLetter == letter){
                 erase = true
@@ -40,9 +40,9 @@ const sumArray = (arr) => {
 log(sumArray([0,4,'5', 3, 'a', 'L', null, 12]))
 
 const countingWords = (arr) => {
-    let dictionary = {}
+    const dictionary = {}
     arr.forEach((word) => {
-        let thisWord = {
+        const thisWord = {
             word: '',
             repetitions: 0
         }
@@ -72,9 +72,9 @@ const animalArray = [
 ]
 
 const createAnimals = (arr) => {
-    let animals = {}
+    const animals = {}
     arr.forEach( (animal, index) => {
-        let thisAnimal = {}
+        const thisAnimal = {}
         for(aspect in animal){
             const prop = animal[aspect].property
             const assign = animal[aspect].assign
