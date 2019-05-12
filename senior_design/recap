@@ -1,0 +1,96 @@
+Reg Ex = Type 3 / Regular
+Stack = type 2 / CFL
+Turing Machine = Type 1 / CSL 
+
+PDA (Push Down Automaton) - put into stack, remove, must be empty.
+
+sec 2
+8) n!
+9) n(n+1)/2
+
+review demorgans laws 
+Lemmas 
+can treat 11/12 P(x) as just p  or q
+
+13) plug in the negation and compare 
+14) True 
+
+If you need order, you use Permutations instead of Choices (nCr vs nPr)
+
+How many possible subsets are there of a set? 
+You're choosing an element for your subset, so it's binary 
+So you choose for however many number of elements for your subset.
+So it will be 2^n for your new subset, depending on how many elements 
+So if your set has 20 elements, the possible amnt of subsets is 2^20
+
+5) 4, From and To are the key words for this question.
+
+relations are multiplication 
+
+10) 45
+
+11)90
+
+
+Assign 3 -
+Max Heap - Root is the largest amount
+
+Use stack to write inorder,postoeder, preorder traversals
+
+Post Order - L -> R -> Root 
+
+Average Num of comparisons: Take all the nodes, check how many comparisons you have to take to get there, then divide by total number of nodes
+
+do in order and post order, DFS/BFS, tree/graph 
+Using linked list delete items/put items 
+
+Lookup minimum spanning tree 
+
+del/insert into max heap tree 
+
+sec 2:
+
+1) 2^(log₂n) == n 
+When taking a recursive function that has 2 calls, you have 2^something 
+because the n is divided by 2, the something = logn 
+
+Big O is the upper bound of the function 
+Theta is the most tightly fit line of hte function 
+Omega is the lower bound of the function 
+
+know sorting algs (merge sort, selection sort, heap)
+
+Implement Hash Table, pass value into hash function, place value into result of function.
+If there is collision, implement a linked list to keep them in the same table.
+
+convert tree to array : Use inorder traversals 
+
+lookup how to minimize space complexity 
+
+
+3-25-19
+
+To get negative binary number, flip the bits and add 1.
+
+7)  500/4 = 125 instructions/second 
+    750/3 = 250 instructions/second 
+    M2 is faster than M1 by factor of 2.
+
+look for parallel computing questions.
+
+11) .9*5 + .1*20 = 6.5
+
+8 = h*5*(1-h)*20 
+
+pt 2, 7) Turnaround Time = Waiting Time  + Burst Time
+            80 = W + 26 
+            W = 54 
+            54/4 = avg time 
+    
+for 2 way mapping, every phys address is mapped to a set in cache with 2 possible locations 
+
+pt 3 (7,8) Two way associative mapping 
+
+semaphore - used for synchronization 
+P = Wait function  (decrements)
+V = Signal Function  (increments)

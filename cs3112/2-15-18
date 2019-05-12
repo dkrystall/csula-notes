@@ -1,4 +1,4 @@
-Master Theorem: To use the master theorem, B must be > 1
+Master Theorem: To use the master theorem, b must be > 1
 T(n) = aT(n/b) + n^e, a > 0, b > 1
 
 case 1: c < lg𝖻a => T(n) = Θ(n^lg𝖻a)          f(n) < n^lgb a => T(n) = Θ(n^lgb a)

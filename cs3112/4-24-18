@@ -1,6 +1,5 @@
 Lookup: Loop Invariant
 
-
 6.1-1 if we have a heap of height h, what is the minimum node, what's the maximum
 MAX HEAP TREE
 All heap trees are complete. One of the leaf nodes will be the smallest element

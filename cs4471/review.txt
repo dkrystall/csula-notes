@@ -1,0 +1,38 @@
+HUBS - Connect wires together
+SWITCHES - Break up Collision Domains 
+ROUTERS - Breaksup broadcast Domains AND Colission domains
+            But they also create an 'internetwork'
+            Internetwork - the process or technique of connecting different networks by using intermediary devices such as routers or gateway devices.
+            Routers breakup Collision Domains 
+
+Switches and 
+Routers breakup Broadcast Domains 
+Layers:
+    Top: How App runs 
+        Application - UI 
+        Presentation - Data 
+        Session - Separates Data 
+
+    Middle: Routingto remote Network
+        Transport - Delivers Packets 
+        Network - addressing for destinations
+
+    Bottom: Local Network Transport 
+        Data Link - puts data into Frames 
+        Physical - moves bits 
+
+3-way Handshake 
+    SYN - Synchronize 
+    ACK - Acknowledge 
+    1) Client sends SYN to server 
+    2) Server replies with SYN-ACK
+    3) Client sends ACK to server
+
+Flow Control: Uses a buffer on recieving information.
+    Does this by setting a Window size that the client can accept.
+    When it's full the packet retrieval stops, then the client sends the server an ACK message to put more data through pipe 
+
+Routers have Routing Tables:
+    NET - Netowrk ID 
+    INT - Interface (E0 - Ethernet, S0 - Serial )
+    Metric - ????

@@ -1,0 +1,125 @@
+CHAPTER 11 
+
+Trunks -
+    Switch portscan be a "trunk port"
+    Trunk ports allow the switch to carry traffic from multiple VLANs on one trunk.
+    Creating a trunk requires 2 or more vlans 
+
+"Router on a stick" - All the traffic goes through one Link(Cable)
+    It's also a trunk, so all VLANS go through the switch on one cable.
+    This requires a sub-interface on the router, so the router can route to the 3 VLANs
+    Interfaces are assigned as 0/0.<Integer> IE:  0/0.1, 0/0.2, 0/0.3  Through GigE 0/0 
+        Each interface has its own IP Address.
+    Uses 802.1Q Encapsulation to register addresses.
+
+With IVR(Inter-VLAN-Routing), Routing functions are built into the 3560(Multilayer SwitcH: Can perform ethernet frame switching, and routing of packets)
+    This switch is in the switch category in cisco packet tracer.
+    Can do routing based on the layer 3 header.
+    Multilayer Switch - Router + Switch 
+
+Creating VLANs:
+    type: "vlan <Integer>" //Integer is the number of which vlan it is.
+    "sh vlan" - Prints all VLANs and corresponding Names, which ports they occupy
+    "sh interfaces trunk" displays VLANs on trunk.
+    Trunk Ports have a "native" VLAN 
+    Traffic on the native VLAN don't need IDs.
+    If the switch sees a non-tagged ethernet frame going on the trunk, the switch assumes the frame is associated with the native VLAN 
+
+"sh interfaces <Switchport> switchport" 
+"sh interfaces FastEthernet0/15 switchport" 
+    This displays information about the port and its VLAN. 
+
+Assigning Access Ports :
+    Assign vlan 3 to a specific port..?
+
+Configure multilayer switch to configure layer 2 ethernet switching of frames, and layer 3 switch of IP Packets 
+
+vlan 10 is 1 pc, vlan20 is another. Across two VLANs connected by a virtual router.
+
+># ip routing 
+    int vlan 10
+    ip address 192.168.10.1 255.255.255.0
+    int vlan 20 
+    ip address 192.168.20.1 255.255.255.0 
+
+    These IP Addresses will be tied to the Virtual Interface that the Multilayer Switch is creating.
+    *SVI Interfaces (Switch Virtual Interfaces)
+
+CHAPTER 12 - SECURITY
+ACL - Access Control List
+To implement security measures, we use access lists.
+Access Lists:  
+    Usually used to filter traffic as it comes in or exits a router.
+    On Cisco routersthere are 3 types of lists:
+        1 - Standard Access Lists 
+            On this, the most simple, you can permit or deny traffic from going in or out of a router interface
+            This is based on the source IP of the packet, or based on the subnet that the source IP belongs to
+        2 - Extended Access Lists
+            More Flexible than SAL. More power as well in creating more granular filtering.
+            Can filter traffic based on SourceIP, Destination IP, Protocol Type(TCP vs UDP, ICMP), TCP/UDP Port Numbers
+        3 - Named Access Lists 
+            More or less the same as the above two, but instead of associating with an access list number, they have more menaingful names
+            Named Access Lists are better for documentation and understanding particular access lists.
+
+When you create access lists, you have to know the difference between Inbound/Outbound Access Lists.
+Traffic can be coming in one interface of the Router, and be filtered with an "Inbound (I/B) Access List"
+If you want to filter as traffic is leaving, you create an O/B ("Outbound" ALC - Access Control List)
+Direction:
+    Whenever traffic hits a router interface, it checks to see if they're on the right interface, if there's any ACL
+    Assuming you have an IP packet that's tied to something on the RHS of the router, the Router will filter it with the I/B ACL, THen the packet will be routed to another interface on the network.
+    Before it leave sthe router, the router will check the O/B ACL to see if it has permission.
+        On any router interface/sub-interface, you can create an ACL and apply it to I/B or O/B Traffic.
+    Cannot have more than 1 I/B Access List associated w/ the same interface.
+    
+    If you block traffic in one direction, it blocks both directions.
+
+    Standard Access List Deny Example:
+        Lab A 
+                # config t
+        (config)# access-list 10 deny <src IP> <wildcard-mask> //deny any traffic with src IP starting with IP... Then wildcard mask is inverse of subnet mask.
+        //any wildcard bits with 1, don't care which bits are in the subnet.
+        //with the wildcard mask, any location you see a 0, you care about the value in the subnet.
+        
+        (config)# access-list 10 deny 172.16.40.0 0.0.0.255  //block ip packets where src ip address starts with 172.16.40.0 0.0.0.255
+        (config)# access-list 10 permit any // allows everything else, as long as its not in the denied subnet
+            If there was no permit any statement, it defaults to deny everything.(Implicit deny)
+            The 10 means it's a standard list. Less than 100 is a standard list.
+
+        Because it's a standard list, it's only filtered based on the source network
+        Go Over example 3.
+
+    Extended Access List (Figure 12.5):
+        To Block FTP traffic, you have to deny tcp
+        router(config)# access-list 110 deny tcp any host 172.16.50.5 eq 21    //eq 21 is the tcp port number, FTP uses 21.
+        To Blcok Telnet traffic, deny tcp port. 
+        router(config)# access-list 110 deny tcp any host 172.16.50.5 eq 21    //eq 23 is the tcp port number, Telnet uses 23.
+        //110 = Extended IP ACL.
+    incoming ports from client ips are ephemeral. So you can't block well known port sources.
+
+Spanning Tree Protocol (STP):
+    disables redundant links in a network of switches 
+    prevents infinite loops and broadcast storms.
+    Links are disabled in software.
+    
+    Root Bridge
+    The Lowest Bridge ID# becomes the root bridge 
+    Bridge ID = Bridge Priority# + MAC Address
+
+    The Priority # by default is 32768
+    Find the lowest Bridge ID by looking at the mac address. Lowest mac address will be the root bridge if the priority numbers are default 
+
+    Find Root Ports 
+    Remaining switches that aren't the root bridge, have to figure out which port is the root port 
+    Root port is the lowest cost to the root bridge.
+
+    Find Designated Ports 
+        For every link in the network, one side of the link has to be a designated port.
+        It's the port that advertises lowest cost back to root bridge 
+        Go through all the links and figure out, as the BPDU packet circulates throughout the netowrk in counter clockwise direction 
+        there's a field in the BPDU packet that contains the cost, and it's initially 0, and goes up as it traverses the network.
+        Switches change the value of hte BPDU cost field, it increases every forward.
+        BPDU packet with lowest cost is the optimal path.
+        So whichever switch advertises the lowest cost becomes the designated port.
+    
+
+

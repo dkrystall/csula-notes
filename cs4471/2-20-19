@@ -1,0 +1,44 @@
+arp broadcast -
+    broadcast packet sent out, hopes something in the domain has the answer.
+
+class c network - 
+    utilizes 24 bits, can use 8 bits to assign addresses. 2^8 = 256 addresses.
+
+VLSM networks, 
+    a router needs as many ip addresses as its connections to other subnets.
+    4 block (/30),
+        two IPs used for broadcast and network
+        other two for hosts.
+    first 27 bits in an address space must be the same in a /27 subnet 
+
+networks: 172.1.4.0, 172.1.5.0, 172.1.6.0, 172.1.7.0
+000001 00  .4
+000001 10  .6
+000001 01  .5
+000001 11  .7   16+6 = /22 
+first 6 bits in third octet matcj
+so with /22, the last 10 bits are free, so the block size is 2^10 
+block size: available for hosting
+
+Basic IP troubleshooting:
+Ping city 
+    Ping the machine from the machine ( ping yourself)
+    then ping the router/gateway 
+    keep hopping til you can get to the server.
+
+Cisco 2960 switch, 1900 series router
+Config:
+    enter first time setup
+    router> 
+    router> enable 
+    router#  //# is a good thing, means you can config the router.
+        //if there's something else, like a 'password' then it's been previously configured.
+        //break into router and perform password recovery
+        //reset router to factory defaults.
+    router# show flash:  //displays files in flash memory 
+
+when things aren't working, go for the question mark.
+    router>?
+    //saviour
+    router>show ? 
+    //shows commands for show 

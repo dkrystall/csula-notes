@@ -1,0 +1,37 @@
+Slides: Chapter 13
+
+
+NAT Terms: Network Address Translation
+
+NAT Terms:
+    Inside Local: typically a RFC 1918 IP address ie. 192.168.1.X 
+    Outside Local: Address that the source host is known on the internet. (Search on google in terms of cisco networking)
+    Inside Global: Source host address used after the local address is translated to access the internet. 
+    Outside Global: The Destination of the outside address 
+
+NAT Overloading (Port Access Translation):
+    Uses ports to figure out where to send packets 
+    There can be multiple TCP ports assigned to the same machine on a network
+    So the Router can have ~65,000 TCP Port Connections, but not necessarily 65,000 devices connected to it.
+
+To setup static NAT Configuration:
+    ```
+    ip nat inside source static 10.1.1.1 170.46.2.2 
+    !
+    interface Ethernet0
+
+TO setup Dynamic NAT:
+
+    ip nat pool todd 170.168.2.3 170.168.2.254 
+        netmask 255.255.255.0
+    ip nat inside source list 1 pool todd  //list 1 is access control list 1
+
+    access-list 1 permit 10.1.1.0 0.0.0.255 //Last octet doesn't matter, matches watever.
+
+Chapter 17.
+
+EIGRP - 
+
+Multicast Packets have an IP, where the first octet = 224 - 239, then the last 3 octet values dont matter.
+224.0.0.10 is reserved for Multicast EIGRP Hello Packets
+

@@ -1,0 +1,14 @@
+        - News API 
+        - SEARHCING - https://newsapi.org/v2/everything
+        - DATA FETCH - https://newsapi.org/v2/everything?q=<query>&from=<YYYY-mm-dd>&sortBy=<sort>&apiKey=<API_KEY>
+        - API key required
+
+        - Open Food Facts
+        - SEARCHING - https://world.openfoodfacts.org/api/v0/product
+        - DATA FETCH - https://world.openfoodfacts.org/api/v0/product/[barcode].json
+        - No API Key Required
+
+        - Stay Well
+        - SEARCHING - https://api.kramesstaywell.com/Content 
+        - DATA FETCH - https://api.kramesstaywell.com/Content/{bucketIdOrSlug}/{idOrSlug} 
+        - API Key required
