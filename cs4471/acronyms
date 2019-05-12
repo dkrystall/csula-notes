@@ -1,3 +1,5 @@
+CSMA/CD - Carrier-sense multiple access with collision detection
+MAC Add - Media Access Control Address
 STP - Spanning Tree Protocol
 ACL - Access Control List
 STA - Spanning Tree Algorithm
@@ -5,5 +7,32 @@ BPDU - Bridge Protocol Data Unit
 PVST - Per VLAN Spanning Tree 
 RSTP -   Rapid Spanning Tree Protocol 
 AS - Autonomous System 
-EIGRP - 
-RIP - 
+EIGRP - Enhanced Interior Gateway Routing Protocol 
+RIP - Routing Information Protocol 
+LLC - Logical Link Control 
+MAC - Media Access Control 
+ISDN - Integrated Services Digital Link 
+DSL - Digital Subscriber Line /// ADSL - Asymmetric DSL  ///DSLAM - DSL Multiplexor
+HFC - Hybrid Fiber Coaxial
+ATM - Asynchronous Transfer Mode   - Reorganizes packets that come in. 
+OC3 - Optical Carrier 3 
+DTE - Data Terminal Equipment
+DCE - Data communications equipment   //hardware devices 
+ARP - address resolution protocol
+HDLC - HIGHlevel Data Link Control 
+PPP - Point to Point Protocol 
+GRE - Generic Routing Encapsulation 
+MPLS -Multiprotocol label switching
+BGP - Border Gateway Protocol 
+VTP - VLAN Trunk Protocol 
+DAI - Dynamic ARP Inspection 
+DHCP - Dynamic Host Configuration Protcol 
+FHRP - First Hop Redundancy Protocols
+HSRP - Hot Standby Routing Protocol 
+SNMP - Simple Network Management Protocol, UDP Port: 161, SNMP Trap UDP Port: 162 
+NMS - Network Management Stations / Network Management Software 
+SMTP - Simple Mail Transfer Protocol 
+SHA - Secure Hashing Algorithms
+SDN - Software Defined Networking 
+API - Application Programming Interface 
+APIC-EM - Application Policy Infrastructure Controller Enterprise Module 
