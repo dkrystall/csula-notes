@@ -1,0 +1,75 @@
+
+Electric Flux: How many field lines are captured by a surface area.
+
+    magnitude = area 
+
+    Larger area, more flux, greater magnitude. 
+
+    The smaller the area, the smaller the vector will be.
+
+    The area vector is perpendicular to the surface.
+
+    Maximum Flux: 
+        Flux = E dot A cos(0) = E dot A , where E = Electric field, and A = area vector 
+
+    Zero Flux:
+        Flux = E dot A cos(90) = 0, where E = Electric field, and A = area vector 
+    
+    You have an intermediate flux when the angle is between 0 and 90 degrees.
+
+Guass Law:
+    F = k(q1q1) / d^2 
+        k = 9*10^9 (Newton*meter^2 / Coulomb^2)
+        k =  1 / 4pi ϵ₀ = 8.81 * 10^-12  = Coulomb ^2  / Newton*Meter^2 
+
+When answering questions, always start with the formula 
+
+Area A = LW = .4 * .6 = 0.24 m^2 
+
+Flux = Ệ · Â  = EAcos(Θ)  theta = 70 degree 
+
+Electrical field from a point charge 
+
+E(Electric Field) = kq/ d^2 
+  = 1/4piε0 * q/d^2 
+
+Electric Flux = Ê·ÂcosΘ 
+              = E 4pi*d^2*cosΘ = E*4pi*d^2 
+              = q(enclosed)/ϵ₀ = q/ϵ₀
+        E = 1/4piϵ₀ * q/d^2 
+
+Electric Field from Infinity large charged plane 
+
+charged density (σ) = q/A , where q = charge, and A is area in meters squared.
+
+Total Electric Flux = ∑ of all flux 
+    Flux = EAcos(0)+EAcos(90)+ EAcos(0)   //cos90 is 0, so middle term is cancelled 
+    Flux = 2EA = q(enclosed) / ϵ₀ = 
+                 q(enclosed) = σ*Area 
+
+    Density will usually be given 
+
+Gauss Law: 
+    Gauss's law does not consider the charge outside the guassian surface 
+    inside the gaussian surface, the total charge is the sum of all individual charges. Positive will cancel negative charges.
+    Any charges outside of the surface will not effect the total charge.
+    outside charges don't contribute to flux. 
+
+Electrical field fomr infinitely long charged wire
+    The electric field is perpendicular to the wire.
+    The wire is infintely long, the total charge would be infinity.
+    Hence why we have charge density. This is within a certain lenght/area.
+
+    wire filled with positive charge. (Cylinder)
+    -----------------------------(-)
+    ++++++++++++++++++++++++++++(++ )
+    -----------------------------(-) 
+    <------------- l ------------->
+    lamda = linear charge density 
+    
+    Flux = Flux(left) + Flux(Side) + Flux(Right)
+         = EAcos90 + E(2pi d*l)cos(0) + EAcos90 
+         = E(2pi*d*l)
+         Apply Gauss Law 
+         = q(enclosed)/ϵ₀ = λl/ϵ₀ 
+         E = 1/2piϵ₀(λ/d) 

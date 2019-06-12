@@ -1,0 +1,13 @@
+networks:
+    ethernet hubs:
+        sometimes go up to 48 ports 
+        replicates all incoming traffic to all devices cnnected to the hub 
+        acts like a coax network
+    connect two comps to a hub -> network
+    ethernet cable: RJ45 Ends (8 pins each)
+        8 wires along the inside
+    Used to use coaxial cables:
+        just two conductors, no bueno
+        Would have a T conector to connect computers to the coax cable in a series
+        need a terminator at both ends of the coax cable
+        networks would fail if there was any break in the main coax cable.

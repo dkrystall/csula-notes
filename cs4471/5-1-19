@@ -1,0 +1,45 @@
+HUB in spokes Hub in the middle pointing to edges 
+
+Fully Meshed Networked - every node is connected 
+
+WAN Terms:
+    Provider Toll Network
+    CPE - Customer Premises Equipment 
+    Demarc - Demarcation Point. Physical location in customers telecom room. To the left of the demark point, it's the phone companys job to make sure everything's working. To the right it's up to the customer.
+    CSU/DSU - channel service unit / data service unit
+    Local Loop / Last Mile 
+    CO - Central Office 
+
+WAN Types:
+    Dedicated - Synchronous Serial 
+    Circuit-Switched - Asynchronous serial, ISDN, T-1 
+    Packet-Switched - Synchronous Serial, uses statistical multiplexing 
+
+Cisco HDLC Format 
+    Cisco took HDLC formal standard and customized it by adding a 'proprietary field' that held different types of data that could be
+    If the router didn't use PPP encapsulation, it would default to HDLC 
+    CHAP vs PAP - Challenge Handhsake Authentication Protocol vs Password Authentication Protocol 
+
+Ip Addresses have to be in the same subnet. 
+
+VPN - VPN Server provides new set of IP Addreses, subnet number, default gateway, DNS server...
+
+VPN - Hide/Encrypt Traffic betweenm physical location and next server 
+
+Branch WAN Challenges 
+    Cloud 
+
+Intelligent WAN: Leveraging the Internet 
+    Branches connect to cloud srevices. 
+    They can save money doing this.
+    VPC - Virtual Private Cloud 
+
+
+MPLS-VPN provides layer 2 o rlayer 3 service.
+
+Size of BGP table has over 1/2 a million entries.
+
+ISP Establishes BSP connection btween itself and border routers .
+
+eBGP = Exterior BGP (IBGP = Interior Border Gateway Protocol.)
+

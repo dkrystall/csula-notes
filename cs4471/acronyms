@@ -8,6 +8,8 @@ PVST - Per VLAN Spanning Tree
 RSTP -   Rapid Spanning Tree Protocol 
 AS - Autonomous System 
 EIGRP - Enhanced Interior Gateway Routing Protocol 
+AD - Reported/Advertise Distance
+FD - Feseable Distance
 RIP - Routing Information Protocol 
 LLC - Logical Link Control 
 MAC - Media Access Control 

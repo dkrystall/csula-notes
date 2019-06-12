@@ -1,0 +1,118 @@
+Section on Configuring Cisco Devices 
+    If you can do the labs, that's it. 
+    
+Switches in lab - 3750 
+Switches support VTP - VLAN Trunk Protocol 
+
+VLAN Trunk Protocol -
+    If you have 5 layer 2 switches, that are all connected by trunk links (1 root, 4 leafes)
+    ie. If you wanted to create VLAN 2, by default VLAN 1 would be predefined, and all ports would be in vlan 1.
+        Therefore: all the devices would be in the same vlan domain.
+    To change settings, You setup a VTP Server with clients, and you can modify the VLANS from the VTP Server.
+    
+    By default, every switch is setup as a VTP Server. 
+
+    VTP Domain - Name of the space that the cluster of VTP devices are in.
+        If you change the server of the domain, it will change everythign else in the cluster. 
+    
+    `#vtp domain King-Hall` - sets the domain name to 'King-Hall' 
+
+    `#vtp mode (client/server/transparent)`   transparent - Create/Delete VLANs on the switch locally.
+
+DHCP Snooping - Sends out fake IP addresses to users, prevents users from sending traffic passed the default gateway 
+When the switch sees an untrusted interface, it will blocked packets. 
+
+#int fa0/1
+->  (config-if)
+#switchport port-security mac-address   //locks down access to a switch port to a specific mac address. 
+    //If you don't know hte MAC address, you can specify a maximum number of mac addresses that can be seen on the port 
+    //#swithcport port-security maximum 1, First address the switch sees on the port will be the address. everything else will be blocked.
+#switchport port-security violation // what to do when security is violated? 
+    protect / restrict / shutdown 
+
+Identity-Based Networking 
+    Client has to have credentials for the switch, then will be granted access after verifying with other equipment.
+
+802.1x 
+    This allows Identity-based networking using client/server access control 
+
+    Client - 
+    Authenticator - Layer 2 Switch 
+        Switches only deal with layer 2 traffic.
+
+Default Gateway 
+    In a broadcast domain, there's probably only 1 default gateway.
+    Change Gateway from clients
+
+Proxy ARP -
+    If Subnetmask is 0.0.0.0, every ip address is in the same network as the PC 
+    It won't forward packets because it thinks every machine is in the default gateway.
+    Acts as the server the client is trying to reach by assigning itself as teh psuedo host the client wants.
+
+FHRP - 
+    Kind of like RAID 1 for Routers 
+
+HSRP - 
+    Cisco protocol, Has two routers act as one default gateway. 
+    Switches the router when one fails by keeping track of some 'keep alive' packets. 
+    Configured in the 'standby' of the config-if of the router
+    HSRP Virtual MAC-
+        Has a virtual ethernet address, based off an HSRP Boot Number 
+        standby <group number> 
+        many groups so you can have more virtual IP addresses
+
+SNMP - 
+    Makes it possible for a network admin to monitor the health of devices on the network.
+
+IP 10.85.16.10
+Subnet Mask:
+    255.255.224.0
+Subnet?
+    00001010 01010101 00010000 00000000
+    11111111 11111111 11100000 00001010
+                         // There are 13 0's after the subnet mask, so blocksize is 2^13 
+    00001010 01010101 00000000 00000000 = 10.85.0.0 
+    //Back to Decimal 
+    10.85.0.0 
+
+Broadcast?
+    Set the Host Bits to Binary 1's,
+    0001010 01010101 00011111 11111111
+    10.85.31.255
+# Hosts?
+    2^13 - 2 
+1st Host IP?
+    10.85.0.1
+Last Host IP?
+    10.85.31.254
+
+
+Broadcast Domains - Start at each node, look til it hits a router, 
+Collision Domain - Start at each node, look til it hits a router/Switch 
+Number of Subnets = Num of Broadcast Domains
+
+Microsoft cmd to display table of ip's and eth addresses = ARP 
+
+list active connections: netstat -na 
+
+configure a stack 
+
+Infrastructure as a service - Just Hardware, you install everything else 
+Platform as a service - Hardware and tools, you just install your app 
+Software as a service - Provides everything
+
+Voice Traffic is stable, usually never above 64 KBps 
+
+Ethernet Header for Class of Service, can be used with IP Phones, Then in the IP header the switch can change the Quality of Service header 
+
+Queueing 
+    Can separate Class of Service packets into different queues
+    Then the time sensitive packets will be sent out first. 
+
+Too Much Traffic 
+    If there's too much traffic, router starts dropping packets..
+    The TCP Layer software module then notices the dropped packets, 
+    Then the software slows down the transmission of the packets 
+    TCP assumes congestion and slows down.
+    To avoid congestion, have the TCP module stop and let everything die for a little bit. Then retransmit.
+    

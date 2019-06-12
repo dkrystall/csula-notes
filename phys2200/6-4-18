@@ -1,0 +1,36 @@
+A uniform electric field exists in the region between two oppositely charged plane parallel plates. A proton is released from rest at the surface of the positively charged plate and strikes the surface of the opposite plate,
+1.60 cm distant from the first, in a time interval of 3.2*10^-6 s. 
+a) Find the mag of the electric field.
+b) Find the speed of the proton when it strikes the negatively charged plate.
+
+Field goes positive to negative 
+      
+    |+|   ->   |-|
+    |+|   ->   |-|
+    |+|   ->   |-|
+    |+|   ->   |-|
+        d = 1.6 cm
+
+Proton Mass = 1.67*10^-27kg 
+d = 0.016 meter 
+t = 3.2*10^-6 seconds 
+1 charge{e} = 1.6 x 10^-19 Coulombs
+Proton charge = positive 
+electron charge = negative 
+Fc = k q1q1/d^2 
+F(electric field) = qE = eE = F(net) = ma 
+
+Δx = V(initial)*t+1/2(at^2)
+0.016 = 0 + 1/2(a((3.2*10^-6)^2))
+2Δx/t^2 = a 
+
+b) V(final) = V(initial) + at 
+
+21.38) 
+a) A goes down, B is cancelled and is a point, C goes up.
+
+Etotal = E1 + E2 + E3 
+
+Electrical Field Lines 
+    Start from positive, end at negative.
+    
