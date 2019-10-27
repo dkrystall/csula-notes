@@ -1,0 +1,15 @@
+Work(electric) = F(E Field) DOT d(distance) cos(Θ) = -PE 
+
+Negative Work done by the E field is equal to the change of potential energy 
+
+-W(E) = PE , W(E) = -PE 
+
+ΔPE = -W(energy) = -[inf,r]∫F(E)dr 
+                 = -[inf,r]∫K Qq/r^2 dr = kQq∫dr/r^2 = -kQq (-1/r|)[inf,r]]
+             ΔPE = kQq / r
+             ΔV = ΔPE /q = kQ/r = V(final) - V(initial) = V-V(inf) = V - 0 = V, at finite distance, r.
+
+Potential Energy is not an inverse square law. 
+PE is scalar
+
+A conductor has the same potential energy everywhere. 

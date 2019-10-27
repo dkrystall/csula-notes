@@ -1,0 +1,44 @@
+EMF - 
+Electrical Field gives off work so PE decreases.
+Electric Field does positive work and moves electrons
+Battery does negative work inside 
+
+I = ε / (R + r)
+C = Q/V ,
+    When Capacitor's fully charged, PD = Max = voltage of battery, then I = 0.
+
+Current is the same throught the circuit 
+
+Capacitors share voltage in series 
+Resistors share voltage in series 
+
+In series, Total R = R1 + R2 +....
+
+In Parallel, Total 1/R = 1/R1 + 1/R2 
+                     R = V/I(Total)
+In Parallel, Total C =  Ca + C2 
+
+In Parallel, I total = I1 + I2  = V/R1 + V/R2 
+
+Steady Case: After everything is stable (Much time has passed)
+
+Switch Closed: t = 0
+Short time after closed 
+q, i , Vc 
+Vr will change with time (Transited Stage)
+Long TIme,
+All are stable, no more chanve (Steady Stage)
+
+Total Potential Difference in a circuit = 0 
+
+Midterm question , 26.51 
+
+Magnetic Fiels go from North to South 
+Magnetic field lines are closed loops, no start no end. 
+
+Magnetic Field represented by B.
+
+x - into the board
+o - out of the board
+
+F(magnetic force) = q V x B , where q = charge, V = Velocity, B = Magnetic Field

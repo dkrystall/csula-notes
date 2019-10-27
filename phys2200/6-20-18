@@ -1,0 +1,35 @@
+
+
+ΔPE = -ΔKE 
+
+Work(Energy) = ΔKE = KEf - KEi = qE d = 2.2*10^-6 J 
+4.2*10^-9 * 0.06 = 2.2*10^-6 
+
+PE(Total) = V(total)*q(test)
+
+Capacitance = Epsilon naught * Area of plate / distance between the plates.
+
+From distance of the plates, we can discern charge density 
+
+CHARGE Density = charge on the plate(C) / Plate area (m^2)
+
+parallel increases capacitance 
+series decreases capacitance 
+
+Series Capacitance Calculation 
+1/Ctotal = 1/c1 + 1/c2 + ...
+
+Parallel Calculation
+Ctotal = C1 + C2 + ...
+
+When you have multiple capacitors in a series circuit, the distances between the capacitors adds up. So it's as if you have one capacitor with the total distance of each one added up.
+
+Capacitors in series will share voltage in series. So if each capacitor on its own can only withstand 50V, if you have two or 3, they'd be able to withstand higher voltages.
+
+Dielectric materials reduce teh potential difference between the capacitor so the Capacitance is increased. C=q/ΔV 
+
+Midterm: Will calculate total capacitance given circuit. 
+
+1/C(34) = 1/c3+ 1/c4
+C(34) = (C3)(C4)/C3+C4 
+

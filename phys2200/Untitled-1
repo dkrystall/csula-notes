@@ -1,0 +1,4 @@
+PID Tuning for dvl/position keeping, 3 gains can be tuned one by one.
+
+line up with gate, keep centered and forward, once topic stops publishing gate, go forward a set amount and assume gate is completed.
+

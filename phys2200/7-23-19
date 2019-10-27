@@ -1,0 +1,123 @@
+Magnetic Fields
+
+    RHR is for positive charge
+    for negative charge you reverse the direction
+
+    RHR (For Electron) - 
+        Point toward initial velocity
+        Curl toward Electric Field 
+        Thumb points in direction of field 
+
+    Magnitudes are always absolute values
+    Formula to find magnitude of force: 
+        F(magnetic) = e*v*B (electron x init velocity) = Fc = m(v^2/r) mass(velocity^2/radius)
+        F(mag) = evBsinΘ
+    B = mV/er (mass*velocity/charge*radius)
+
+    27.15)
+        init v = 1.41 * 10^6 m/s
+        r = 5 cm = .05 m 
+        e = 1.6  * 10^19
+        m(electron) = 9.1 * 10 ^-31 kg 
+
+        B = (mv/er) = (1.41 * 10^6 m/s * 9.1 * 10 ^-31 kg ) / (.05 m *  1.6* 10^19 C)
+
+        distance / speed = time, t = pi*r / v-init 
+
+
+    Initially there is no work done by the magnetic field 
+
+    Speed selection of charged particle in a parallel plate capacitor 
+
+        + + + | + + +  Top Plate Positively charged
+        -------------
+           x  |   x
+   ⊕ -> - ->⊕-| -> - -> The magnetic field is perpendicular to the electrical field 
+     v    x   v E xB    This moving charge id subject to the Electrical force dowanrd, and the magnetic force upward 
+        -------------   F(electric) = charge*EF = qE,  F(magnetic) = charge*velocity*B = qvB
+        - - - | - - -   bottom Plate negative charged
+
+        When Fe = Fb , the sum of forces is 0, and the charges move straight.
+        We get V = E/B is selected.
+
+
+        if Fe > Fb, electric force is greater, then charge will drop 
+        + + + | + + +  Top Plate Positively charged
+        -------------
+           x  |   x
+   ⊕ -> - ->⊕ | ⤵️
+     v    x   v ⊕
+        -----------⊕-  
+        - - - | - - -
+
+
+        if Fe < Fb, then charge will rise, magnetic force is greater.
+        + + + | + + +  Top Plate Positively charged
+        -----------⊕-
+           x  | ⊕ ⤴️
+   ⊕ -> - ->⊕ | 
+     v    x   v  x
+        -------------  
+        - - - | - - -
+
+
+        alpha particle +2HE +w3 
+        Beta particle 
+
+Exam on ch 26,27,28,29
+
+27.39)
+Total F = FB - mg = 0
+
+lIB = mg
+
+I = 20,000 A 
+d = 5m  B = µI / 2pid
+
+adding two electical fields is a vector summation 
+
+28.23) 
+Two long, straight parallel wires, 10.0 cm apart, carry equal 4 A curents in the same direction. Find the maginuted and direction of the magnetic field (a) point P1.
+
+    4A              4A 
+    ⊙ --- 10cm --- ⊙
+    1              2
+
+    <-                <-
+    ↪⊙⤴ --- 10cm --- ↪⊙⤴
+    ->                ->
+
+    Total field at mid points
+    <-      <-
+    ↪⊙⤴  . ↪⊙⤴
+    ->      ->
+    Total B = B1+B2, B1 and B2 are in opposite directions so, B = 0.
+
+    Total field at P2, 25 cm to the right of P1,
+    <-                  <-
+    ↪⊙⤴ -5cm- P1 -5cm- ↪⊙⤴ ---------- 20cm --------- P2   
+    ->                  ->
+
+    Total B = B1 + B2 = (µI /2pi*.3m) + (µI /2pi*.2m), Fields are in the same direction 
+
+    c) Point p3, 20cm above p1.
+        To the left. See Photo 
+
+28.28) Formula in Notes 
+    Three long parallel wires carry current in the directions shown 
+    if the separation between the wires is d, calculat e the magnitude and direction of the net magnetic force per unit lenght on each wire.
+
+        |---- l = 1 m --|
+    1   -----------------  I ->  Net force on wire 1, upward 
+                ^
+                d           
+                v
+    2   -----------------  <- I  Net force on wire 2, zero 
+                ^  
+                d
+                v
+    3   -----------------  I ->  Net force on wire 3, downward 
+
+    Wires 1 and 2 repel, wires 1 and 3 attract. Because wire 1 is close to 2, the repel force is greater.
+    Total F1 = F2 + F3, Net force on wire 1 is upward. μ₀I^2 / 2pid -  μ₀I^2 / 2pi(2d)
+
